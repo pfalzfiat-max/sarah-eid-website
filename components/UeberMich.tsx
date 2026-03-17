@@ -40,10 +40,10 @@ export default function UeberMich() {
                 aria-hidden="true"
               />
               <Image
-                src={process.env.NEXT_PUBLIC_PORTRAIT_URL || 'https://picsum.photos/600/800?random=10'}
-                alt="Sarah Eid – Moderatorin und Sprecherin aus Rheinland-Pfalz"
+                src="/images/sarah-portrait.jpg"
+                alt="Sarah Eid – Moderatorin Rheinland-Pfalz"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Weinprinzessin badge */}

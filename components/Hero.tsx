@@ -25,10 +25,10 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={process.env.NEXT_PUBLIC_HERO_IMAGE_URL || 'https://picsum.photos/1920/1080?grayscale&random=42'}
-          alt="Sarah Eid – Moderatorin und Sprecherin auf der Bühne"
+          src="/images/sarah-f1.jpg"
+          alt="Sarah Eid – Moderatorin auf der Bühne"
           fill
-          priority
+          priority={true}
           className="object-cover object-center opacity-30"
           sizes="100vw"
         />
