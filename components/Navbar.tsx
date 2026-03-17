@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navItems = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Über mich', href: '#ueber-mich' },
+  { label: 'Events', href: '#events' },
   { label: 'Politik', href: '#politik' },
   { label: 'Referenzen', href: '#referenzen' },
   { label: 'Showreel', href: '#showreel' },

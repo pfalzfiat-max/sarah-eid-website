@@ -90,8 +90,8 @@ export default function Hero() {
           {...fadeUp(1.0)}
           className="font-inter font-light text-base text-cream/50 max-w-xl mx-auto leading-relaxed mb-12"
         >
-          Von Firmenevents über politische Podiumsdiskussionen bis zur Gala –
-          professionell, souverän, unvergesslich.
+          Moderatorin für Veranstaltungen, Live-Events, Messen, Talkrunden, Podcasts, TV &amp; Radio –
+          sowie Sprecherin für Imagefilme und Werbung.
         </motion.p>
 
         {/* CTAs */}
@@ -120,16 +120,17 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="flex items-center justify-center gap-12 md:gap-20 mt-24 pb-8"
+          className="flex flex-wrap items-center justify-center gap-8 md:gap-14 mt-24 pb-8"
         >
           {[
             { value: '50+', label: 'Events' },
             { value: '10+', label: 'Jahre Erfahrung' },
-            { value: 'DE', label: 'Bundesweit aktiv' },
+            { value: '6', label: 'Bundesländer' },
+            { value: '2.400+', label: 'Instagram-Follower' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-playfair font-bold text-gold"
-                style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
+                style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)' }}>
                 {stat.value}
               </p>
               <p className="font-inter text-[10px] text-cream/40 uppercase tracking-[0.2em] mt-1">

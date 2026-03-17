@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import SocialProofBar from '@/components/SocialProofBar';
 import Leistungen from '@/components/Leistungen';
 import UeberMich from '@/components/UeberMich';
+import Events from '@/components/Events';
 import PolitikSection from '@/components/PolitikSection';
 import Referenzen from '@/components/Referenzen';
 import VideoReel from '@/components/VideoReel';
@@ -18,6 +19,7 @@ export default function Home() {
         <SocialProofBar />
         <Leistungen />
         <UeberMich />
+        <Events />
         <PolitikSection />
         <Referenzen />
         <VideoReel />

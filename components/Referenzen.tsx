@@ -22,6 +22,12 @@ const testimonials = [
     name: 'Dr. Andreas K.',
     role: 'Referent, Landespolitisches Forum RLP',
   },
+  {
+    quote:
+      'Liebe Sarah, du hast heute bei Alexander Schweitzer wirklich eine klasse Moderation gezeigt.',
+    name: 'Zuschauer via Instagram',
+    role: 'SPD Rheinland-Pfalz Event',
+  },
 ];
 
 const stats = [
@@ -110,7 +116,7 @@ export default function Referenzen() {
 
         {/* Testimonials */}
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           role="list"
           aria-label="Kundenbewertungen"
         >

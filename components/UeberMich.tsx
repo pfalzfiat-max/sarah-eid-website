@@ -104,6 +104,42 @@ export default function UeberMich() {
               ))}
             </ul>
 
+            {/* Leistungsbereiche pills */}
+            <div className="mb-8">
+              <p className="font-inter text-[10px] tracking-[0.3em] uppercase text-muted mb-3">
+                Tätigkeitsbereiche
+              </p>
+              <div
+                className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
+                aria-label="Tätigkeitsbereiche von Sarah Eid"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {[
+                  { icon: '🎤', label: 'Live-Events & Veranstaltungen' },
+                  { icon: '🏢', label: 'Firmen-Events & Jubiläen' },
+                  { icon: '🎪', label: 'Messen & Kongresse' },
+                  { icon: '💬', label: 'Talkrunden & Podiumsdiskussionen' },
+                  { icon: '🎙️', label: 'Podcasts & Radiomoderation' },
+                  { icon: '📺', label: 'TV-Moderation' },
+                  { icon: '📢', label: 'Sprecherin – Imagefilme & Werbespots' },
+                  { icon: '📱', label: 'Social Media Coach (IHK-zertifiziert)' },
+                ].map(({ icon, label }) => (
+                  <span
+                    key={label}
+                    className="inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full font-inter text-xs flex-shrink-0"
+                    style={{
+                      background: 'rgba(201,168,76,0.08)',
+                      border: '1px solid rgba(201,168,76,0.35)',
+                      color: '#C9A84C',
+                    }}
+                  >
+                    <span aria-hidden="true">{icon}</span>
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             {/* Blockquote */}
             <blockquote
               className="border-l-2 pl-5 py-1 mb-8"
