@@ -12,10 +12,30 @@ Liebe Sarah, diese Datei enthält alle Schritte, die du selbst erledigen oder an
 - Impressum & Datenschutz: Dunkles Design, rechtlich vollständig
 - Kontaktformular: Bereit für Formspree-Integration (kein eigener Server nötig)
 - Deployment auf Vercel: https://sarah-eid-website.vercel.app
+- **✨ NEU: Admin-Panel integriert!** Du kannst jetzt selbst Inhalte bearbeiten
 
 ---
 
-## 📋 DEINE AUFGABEN
+## 🎯 SCHNELLEINSTIEG: Admin-Panel (DEINE ERSTE AUFGABE!)
+
+Ab sofort kannst du deine Website selbst bearbeiten – genau wie bei WordPress! 
+
+### 🚀 Los geht's:
+
+1. Öffne deine Website: **https://sarah-eid-website.vercel.app**
+2. Klicke auf den **⚙️ Bearbeiten** Button (unten rechts)
+3. Gib das Admin-Passwort ein
+4. Bearbeite deine Texte und Daten
+5. Klick auf **✓ Speichern**
+6. Aktualisiere die Seite (F5)
+
+**Fertig!** Deine Änderungen sind live ✅
+
+**Ausführliche Anleitung:** [ADMIN-ANLEITUNG.md](./ADMIN-ANLEITUNG.md)
+
+---
+
+## 📋 WEITERE AUFGABEN
 
 ### 1. Kontaktformular aktivieren (Formspree) – ca. 5 Minuten
 

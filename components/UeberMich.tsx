@@ -46,20 +46,6 @@ export default function UeberMich() {
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {/* Weinprinzessin badge */}
-              <div
-                className="absolute bottom-4 left-4 px-3 py-2 border"
-                style={{
-                  background: 'rgba(10,10,15,0.85)',
-                  backdropFilter: 'blur(8px)',
-                  borderColor: 'rgba(201,168,76,0.5)',
-                }}
-                aria-label="Weinprinzessin Südliche Weinstraße 2023/24"
-              >
-                <p className="font-inter text-[9px] text-gold uppercase tracking-[0.25em]">
-                  Weinprinzessin SÜW 23/24
-                </p>
-              </div>
             </div>
           </motion.div>
 

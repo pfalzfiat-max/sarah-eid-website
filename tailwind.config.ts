@@ -23,6 +23,30 @@ const config: Config = {
         navy: '#1C1C2E',
         charcoal: '#2D2D2D',
         'navy-light': '#2A2A45',
+        // shadcn/ui tokens – mapped to the existing design system
+        background: '#0A0A0F',
+        foreground: '#F5F0E8',
+        primary: {
+          DEFAULT: '#C9A84C',
+          foreground: '#0A0A0F',
+        },
+        secondary: {
+          DEFAULT: '#13131A',
+          foreground: '#F5F0E8',
+        },
+        destructive: {
+          DEFAULT: '#ef4444',
+          foreground: '#F5F0E8',
+        },
+        accent: {
+          DEFAULT: '#1A1A25',
+          foreground: '#F5F0E8',
+        },
+        'muted-foreground': '#6B6B7A',
+        input: '#252530',
+        ring: '#C9A84C',
+        // Animated hero color
+        'spektr-cyan-50': '#F5F0E8',
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'Georgia', 'serif'],

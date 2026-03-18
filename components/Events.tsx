@@ -52,7 +52,7 @@ export default function Events() {
     <section
       id="events"
       className="section-padding"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#13131A' }}
       aria-label="Ausgewählte Events – Sarah Eid"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -84,7 +84,7 @@ export default function Events() {
             className="font-inter font-light text-muted max-w-xl mx-auto"
           >
             Ein Einblick in aktuelle Projekte – von politischen Talkrunden bis zu
-            Bühnenmodeationen und Workshops.
+            Bühnenmoderationen und Workshops.
           </motion.p>
         </div>
 
@@ -152,6 +152,23 @@ export default function Events() {
             </motion.article>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mt-14"
+        >
+          <button
+            onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+            className="btn-primary rounded-full"
+            aria-label="Buchungsanfrage für Ihr Event stellen"
+          >
+            Ihr Event anfragen
+          </button>
+        </motion.div>
       </div>
     </section>
   );
