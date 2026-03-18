@@ -49,22 +49,58 @@ export default function AdminPanel() {
 
   if (!isOpen) {
     return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 px-4 py-2 bg-gold text-black rounded-lg text-sm font-bold hover:bg-opacity-90 z-50 shadow-lg"
-        title="Admin Panel"
-      >
-        ⚙️ Bearbeiten
-      </button>
+      <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-2">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-6 py-3 bg-yellow-500 text-black rounded-lg font-bold hover:bg-yellow-400 transition shadow-lg hover:shadow-xl transform hover:scale-105"
+          style={{ 
+            backgroundColor: '#C9A84C',
+            color: '#000000',
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 9999,
+            padding: '12px 24px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            borderRadius: '8px',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.4)'
+          }}
+        >
+          ⚙️ Bearbeiten
+        </button>
+      </div>
     );
   }
 
   if (!isAuthenticated) {
     return (
-      <div className="fixed bottom-6 right-6 w-80 bg-gray-900 border border-gold rounded-lg p-6 z-50 shadow-2xl">
+      <div 
+        className="fixed bottom-6 right-6 w-80 bg-gray-900 border border-gold rounded-lg p-6 z-[9998] shadow-2xl"
+        style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          width: '320px',
+          backgroundColor: '#111827',
+          border: '2px solid #C9A84C',
+          borderRadius: '8px',
+          padding: '24px',
+          zIndex: 9998,
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)'
+        }}
+      >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-gold text-xl font-bold">Admin Panel</h2>
-          <button onClick={() => setIsOpen(false)} className="text-white text-2xl">✕</button>
+          <button 
+            onClick={() => setIsOpen(false)} 
+            className="text-white text-2xl bg-none border-none cursor-pointer"
+            style={{backgroundColor: 'transparent', border: 'none'}}
+          >
+            ✕
+          </button>
         </div>
         
         <p className="text-gray-300 mb-4 text-sm">Geben Sie Ihr Admin-Passwort ein:</p>
@@ -80,6 +116,16 @@ export default function AdminPanel() {
         <button
           onClick={handleLogin}
           className="w-full px-3 py-2 bg-gold text-black rounded font-bold hover:bg-opacity-90 text-sm"
+          style={{
+            width: '100%',
+            padding: '8px 12px',
+            backgroundColor: '#C9A84C',
+            color: '#000000',
+            borderRadius: '6px',
+            border: 'none',
+            fontWeight: 'bold',
+            cursor: 'pointer'
+          }}
         >
           Anmelden
         </button>
@@ -96,10 +142,32 @@ export default function AdminPanel() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 w-96 max-h-96 overflow-y-auto bg-gray-900 border border-gold rounded-lg p-6 z-50 shadow-2xl">
+    <div 
+      className="fixed bottom-6 right-6 w-96 max-h-96 overflow-y-auto bg-gray-900 border border-gold rounded-lg p-6 z-[9998] shadow-2xl"
+      style={{
+        position: 'fixed',
+        bottom: '24px',
+        right: '24px',
+        width: '384px',
+        maxHeight: '384px',
+        overflowY: 'auto',
+        backgroundColor: '#111827',
+        border: '2px solid #C9A84C',
+        borderRadius: '8px',
+        padding: '24px',
+        zIndex: 9998,
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)'
+      }}
+    >
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-gold text-xl font-bold">Admin Panel</h2>
-        <button onClick={() => { setIsOpen(false); setIsAuthenticated(false); }} className="text-white text-2xl">✕</button>
+        <button 
+          onClick={() => { setIsOpen(false); setIsAuthenticated(false); }} 
+          className="text-white text-2xl bg-none border-none cursor-pointer"
+          style={{backgroundColor: 'transparent', border: 'none'}}
+        >
+          ✕
+        </button>
       </div>
 
       <div className="space-y-4 text-sm">
@@ -124,7 +192,7 @@ export default function AdminPanel() {
           ) : (
             <button
               onClick={() => handleEdit('hero.title', content.hero.title)}
-              className="text-gray-300 hover:text-gold text-xs block mb-2"
+              className="text-gray-300 hover:text-gold text-xs block mb-2 cursor-pointer"
             >
               Titel: <span className="text-gold">{content.hero.title}</span>
             </button>
@@ -138,7 +206,7 @@ export default function AdminPanel() {
             <div key={item.id} className="mb-2 text-gray-300 text-xs">
               <button
                 onClick={() => handleEdit(`leistungen.${item.id}.title`, item.title)}
-                className="hover:text-gold"
+                className="hover:text-gold cursor-pointer"
               >
                 • {item.title}
               </button>
@@ -166,7 +234,7 @@ export default function AdminPanel() {
           ) : (
             <button
               onClick={() => handleEdit('ueber.text', content.ueber.text)}
-              className="text-gray-300 hover:text-gold text-xs block"
+              className="text-gray-300 hover:text-gold text-xs block cursor-pointer"
             >
               Beschreibung bearbeiten
             </button>
@@ -194,7 +262,7 @@ export default function AdminPanel() {
           ) : (
             <button
               onClick={() => handleEdit('kontakt.email', content.kontakt.email)}
-              className="text-gray-300 hover:text-gold text-xs block"
+              className="text-gray-300 hover:text-gold text-xs block cursor-pointer"
             >
               Email: {content.kontakt.email}
             </button>
