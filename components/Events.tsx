@@ -9,21 +9,21 @@ const events = [
     description:
       'Politische Talkrunde mit Ministerpräsident Alexander Schweitzer (SPD RLP) über Wiederaufbau, Wirtschaft und Perspektiven der Region.',
     kategorie: 'Politik',
-    image: '/images/events/Ahrtal.jpeg',
+    image: '/images/events/ahrtal.jpeg',
   },
   {
     name: 'Alexander-Schweitzer-Tour',
     description:
       'Moderation der politischen Gesprächsrunden zur Zukunft des Weinbaus in der Pfalz – Neustadt-Mußbach.',
     kategorie: 'Politik & Wein',
-    image: '/images/events/Alexander-Schweizer.jpeg',
+    image: '/images/events/IMG_2434.jpeg',
   },
   {
     name: 'Frankenthaler Pfalzfest',
     description:
       '4 Tage Bühnenmoderation – von der feierlichen Eröffnung mit dem Oberbürgermeister bis zu Interviews mit Künstlern und regionalen Persönlichkeiten.',
     kategorie: 'Festival',
-    image: '/images/events/Pfalzfest.jpeg',
+    image: '/images/events/pfalzfest.jpeg',
   },
   {
     name: 'Talkrunde Mainzer Dom',
@@ -44,7 +44,7 @@ const events = [
     description:
       'Als Social-Media-Expertin & Kameracoach leitete Sarah einen Praxis-Workshop zu professionellen Videoinhalten für Instagram & Recruiting.',
     kategorie: 'Coach / IHK',
-    image: '/images/events/ihk-workshop.jpeg',
+    image: '/images/events/ihk.jpeg',
   },
 ];
 
