@@ -129,7 +129,7 @@ export default function Events() {
               {/* Image area */}
               <div
                 className="relative w-full overflow-hidden"
-                style={{ aspectRatio: '16/9' }}
+                style={{ aspectRatio: '1/1' }}
               >
                 {event.image ? (
                   <Image
