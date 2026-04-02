@@ -232,13 +232,13 @@ export const referenzen = {
       video: '/videos/testimonial3.mp4',
       name: 'Claudia',
       role: 'Zuschauer',
-      quote: '.',
+      quote: '',
     },
     {
       video: '/videos/testimonial4.mp4',
       name: 'Thomas',
       role: 'Zuschauer',
-      quote: '.',
+      quote: '',
     },
   ],
   // Kundenstimmen – hier neue hinzufügen oder bestehende bearbeiten:
