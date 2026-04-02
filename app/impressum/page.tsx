@@ -47,8 +47,8 @@ export default function ImpressumPage() {
             <p>
               Sarah Eid<br />
               Moderatorin &amp; Sprecherin<br />
-              [Straße und Hausnummer]<br />
-              [PLZ Ort]<br />
+              Guttenbergstr. 40<br />
+              76889 Oberotterbach<br />
               Deutschland
             </p>
           </section>

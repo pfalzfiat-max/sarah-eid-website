@@ -60,8 +60,8 @@ export default function DatenschutzPage() {
             <p>
               Sarah Eid<br />
               Moderatorin &amp; Sprecherin<br />
-              [Straße und Hausnummer]<br />
-              [PLZ Ort], Deutschland<br />
+              Guttenbergstr. 40<br />
+              76889 Oberotterbach, Deutschland<br />
               <br />
               Telefon:{' '}
               <a href="tel:+4917632727160" style={{ color: '#C9A84C' }}>+49 176 32727160</a><br />
