@@ -1,44 +1,8 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
-
-const testimonials = [
-  {
-    quote:
-      'Sarah Eid hat unsere Jubiläumsfeier auf ein völlig neues Level gehoben. Professionell, charmant und immer souverän – auch wenn der Abend eine unerwartete Wendung nahm.',
-    name: 'Markus L.',
-    role: 'Geschäftsführer, Mittelständisches Unternehmen, Mannheim',
-    isInstagram: false,
-  },
-  {
-    quote:
-      'Die Messe-Moderation durch Sarah war genau das, was wir gesucht haben: strukturiert, sympathisch und mit der richtigen Dosierung Humor. Unsere Aussteller und Besucher waren begeistert.',
-    name: 'Claudia F.',
-    role: 'Eventmanagerin, Fachmesse Rhein-Neckar',
-    isInstagram: false,
-  },
-  {
-    quote:
-      'Für unsere politische Podiumsdiskussion brauchten wir jemanden, der mit Fingerspitzengefühl moderiert und alle Beteiligten fair zu Wort kommen lässt. Sarah hat das meisterhaft gemeistert.',
-    name: 'Dr. Andreas K.',
-    role: 'Referent, Landespolitisches Forum RLP',
-    isInstagram: false,
-  },
-  {
-    quote:
-      'Liebe Sarah, du hast heute bei Alexander Schweitzer wirklich eine klasse Moderation gezeigt.',
-    name: 'Instagram-Feedback',
-    role: 'SPD Rheinland-Pfalz Event',
-    isInstagram: true,
-  },
-];
-
-const stats = [
-  { value: 50, suffix: '+', label: 'Events' },
-  { value: 10, suffix: '+', label: 'Jahre Erfahrung' },
-  { value: 6, suffix: '', label: 'Bundesländer' },
-];
+import { useRef, useState, useEffect, useCallback } from 'react';
+import { referenzen as content } from '@/lib/content';
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -60,6 +24,81 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   return <div ref={ref}>{count}{suffix}</div>;
 }
 
+function VideoCard({ video, name, role, quote, index }: {
+  video: string;
+  name: string;
+  role: string;
+  quote: string;
+  index: number;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = useCallback(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      className="relative transition-all duration-300"
+      style={{ background: '#13131A', border: '1px solid #252530' }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,0.4)';
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = '#252530';
+      }}
+    >
+      {/* Video */}
+      <div className="relative aspect-video bg-black">
+        <video
+          ref={videoRef}
+          src={video}
+          className="w-full h-full object-cover"
+          controls={playing}
+          playsInline
+          onEnded={() => setPlaying(false)}
+        />
+        {!playing && (
+          <button
+            onClick={handlePlay}
+            aria-label="Video abspielen"
+            className="absolute inset-0 flex items-center justify-center group"
+            style={{ background: 'rgba(0,0,0,0.45)' }}
+          >
+            <div
+              className="flex items-center justify-center w-14 h-14 rounded-full transition-transform duration-200 group-hover:scale-110"
+              style={{ background: 'rgba(201,168,76,0.9)' }}
+            >
+              <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </button>
+        )}
+      </div>
+
+      {/* Text */}
+      <div className="p-6">
+        <p className="font-cormorant italic text-lg leading-relaxed mb-5"
+          style={{ color: 'rgba(245,240,232,0.8)' }}>
+          {quote}
+        </p>
+        <div className="w-8 h-px mb-3 bg-gold" aria-hidden="true" />
+        <p className="font-inter font-medium text-xs text-gold uppercase tracking-wider">{name}</p>
+        <p className="font-inter text-xs text-muted mt-0.5">{role}</p>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Referenzen() {
   return (
     <section
@@ -77,7 +116,7 @@ export default function Referenzen() {
             viewport={{ once: true }}
             className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5"
           >
-            Vertrauen & Referenzen
+            {content.label}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +125,7 @@ export default function Referenzen() {
             transition={{ duration: 0.6 }}
             className="font-playfair text-4xl md:text-5xl text-cream mb-4"
           >
-            Was Kunden sagen
+            {content.heading}
           </motion.h2>
           <div className="gold-divider-center" />
         </div>
@@ -100,7 +139,7 @@ export default function Referenzen() {
           className="grid grid-cols-3 gap-8 mb-20 max-w-xl mx-auto text-center"
           aria-label="Zahlen und Fakten"
         >
-          {stats.map((stat, i) => (
+          {content.stats.map((stat, i) => (
             <div key={stat.label} className="relative">
               {i > 0 && (
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-12 bg-border" aria-hidden="true" />
@@ -124,7 +163,7 @@ export default function Referenzen() {
           role="list"
           aria-label="Kundenbewertungen"
         >
-          {testimonials.map((t, i) => (
+          {content.testimonials.map((t, i) => (
             <motion.blockquote
               key={t.name}
               initial={{ opacity: 0, y: 24 }}
@@ -186,6 +225,13 @@ export default function Referenzen() {
                 </cite>
               </footer>
             </motion.blockquote>
+          ))}
+        </div>
+
+        {/* Video Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+          {content.videoTestimonials.map((v, i) => (
+            <VideoCard key={v.video} index={i} {...v} />
           ))}
         </div>
       </div>
