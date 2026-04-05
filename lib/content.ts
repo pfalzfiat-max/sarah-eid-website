@@ -218,26 +218,20 @@ export const referenzen = {
   videoTestimonials: [
     {
       video: '/videos/testimonial1.mp4',
-      name: 'Markus',
-      role: 'Zuschauer',
+      name: 'Monika Gorges',
+      role: '',
       quote: '',
     },
     {
       video: '/videos/testimonial2.mp4',
-      name: 'Hans',
-      role: 'Zuschauer',
+      name: 'Raimund Müller',
+      role: '',
       quote: '',
     },
     {
       video: '/videos/testimonial3.mp4',
-      name: 'Claudia',
-      role: 'Zuschauer',
-      quote: '',
-    },
-    {
-      video: '/videos/testimonial4.mp4',
-      name: 'Thomas',
-      role: 'Zuschauer',
+      name: 'Helga Schneider',
+      role: '',
       quote: '',
     },
   ],
