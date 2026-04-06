@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { referenzen as content } from '@/lib/content';
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -24,23 +24,13 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   return <div ref={ref}>{count}{suffix}</div>;
 }
 
-function VideoCard({ video, name, role, quote, index }: {
-  video: string;
+function VideoCard({ vimeoId, name, role, quote, index }: {
+  vimeoId: string;
   name: string;
   role: string;
   quote: string;
   index: number;
 }) {
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = useCallback(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -56,44 +46,27 @@ function VideoCard({ video, name, role, quote, index }: {
         (e.currentTarget as HTMLElement).style.borderColor = '#252530';
       }}
     >
-      {/* Video */}
+      {/* Vimeo Embed */}
       <div className="relative aspect-video bg-black">
-        <video
-          ref={videoRef}
-          src={video}
-          className="w-full h-full object-cover"
-          controls={playing}
-          playsInline
-          onEnded={() => setPlaying(false)}
+        <iframe
+          src={`https://player.vimeo.com/video/${vimeoId}?color=C9A84C&title=0&byline=0&portrait=0`}
+          className="w-full h-full"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
         />
-        {!playing && (
-          <button
-            onClick={handlePlay}
-            aria-label="Video abspielen"
-            className="absolute inset-0 flex items-center justify-center group"
-            style={{ background: 'rgba(0,0,0,0.45)' }}
-          >
-            <div
-              className="flex items-center justify-center w-14 h-14 rounded-full transition-transform duration-200 group-hover:scale-110"
-              style={{ background: 'rgba(201,168,76,0.9)' }}
-            >
-              <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </button>
-        )}
       </div>
 
       {/* Text */}
       <div className="p-6">
-        <p className="font-cormorant italic text-lg leading-relaxed mb-5"
-          style={{ color: 'rgba(245,240,232,0.8)' }}>
-          {quote}
-        </p>
+        {quote ? (
+          <p className="font-cormorant italic text-lg leading-relaxed mb-5"
+            style={{ color: 'rgba(245,240,232,0.8)' }}>
+            {quote}
+          </p>
+        ) : null}
         <div className="w-8 h-px mb-3 bg-gold" aria-hidden="true" />
         <p className="font-inter font-medium text-xs text-gold uppercase tracking-wider">{name}</p>
-        <p className="font-inter text-xs text-muted mt-0.5">{role}</p>
+        {role ? <p className="font-inter text-xs text-muted mt-0.5">{role}</p> : null}
       </div>
     </motion.div>
   );

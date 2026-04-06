@@ -217,19 +217,19 @@ export const referenzen = {
   // video: Dateiname im Ordner /public/videos/ (z.B. 'testimonial1.mp4')
   videoTestimonials: [
     {
-      video: '/videos/testimonial1.mp4',
+      vimeoId: '1180430038',
       name: 'Monika Gorges',
       role: '',
       quote: '',
     },
     {
-      video: '/videos/testimonial2.mp4',
+      vimeoId: '1180430835',
       name: 'Raimund Müller',
       role: '',
       quote: '',
     },
     {
-      video: '/videos/testimonial3.mp4',
+      vimeoId: '1180430733',
       name: 'Helga Schneider',
       role: '',
       quote: '',
