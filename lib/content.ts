@@ -219,19 +219,19 @@ export const referenzen = {
     {
       vimeoId: '1180430038',
       name: 'Monika Gorges',
-      role: '',
+      role: 'Veranstaltungsteilnehmerin',
       quote: '',
     },
     {
       vimeoId: '1180430835',
       name: 'Raimund Müller',
-      role: '',
+      role: 'Veranstaltungsteilnehmer',
       quote: '',
     },
     {
       vimeoId: '1180430733',
       name: 'Helga Schneider',
-      role: '',
+      role: 'Veranstaltungsteilnehmerin',
       quote: '',
     },
   ],
