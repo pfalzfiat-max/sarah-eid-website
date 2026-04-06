@@ -204,7 +204,7 @@ export default function Referenzen() {
         {/* Video Testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {content.videoTestimonials.map((v, i) => (
-            <VideoCard key={v.video} index={i} {...v} />
+            <VideoCard key={v.vimeoId} index={i} {...v} />
           ))}
         </div>
       </div>
