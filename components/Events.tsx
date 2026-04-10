@@ -2,51 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-const events = [
-  {
-    name: 'Zukunftsdialog Ahrtal',
-    description:
-      'Politische Talkrunde mit Ministerpräsident Alexander Schweitzer (SPD RLP) über Wiederaufbau, Wirtschaft und Perspektiven der Region.',
-    kategorie: 'Politik',
-    image: '/images/events/ahrtal.jpeg',
-  },
-  {
-    name: 'Alexander-Schweitzer-Tour',
-    description:
-      'Moderation der politischen Gesprächsrunden zur Zukunft des Weinbaus in der Pfalz – Neustadt-Mußbach.',
-    kategorie: 'Politik & Wein',
-    image: '/images/events/IMG_2434.jpeg',
-  },
-  {
-    name: 'Frankenthaler Pfalzfest',
-    description:
-      '4 Tage Bühnenmoderation – von der feierlichen Eröffnung mit dem Oberbürgermeister bis zu Interviews mit Künstlern und regionalen Persönlichkeiten.',
-    kategorie: 'Festival',
-    image: '/images/events/pfalzfest.jpeg',
-  },
-  {
-    name: 'Talkrunde Mainzer Dom',
-    description:
-      'Outdoor-Moderation in der Landeshauptstadt Mainz – professionell, mitreißend, mit Bühnenpräsenz und starker Außenwirkung.',
-    kategorie: 'Live-Event',
-    image: '/images/events/talkrunde-mainzer-dom.jpg',
-  },
-  {
-    name: 'Billigheimer Purzelmarkt',
-    description:
-      'Moderation des PreOpening-Abends beim 575. Purzelmarkt – inklusive der feierlichen Krönung der neuen Purzelmarktkönigin.',
-    kategorie: 'Brauchtum',
-    image: '/images/events/purzelmarkt.jpg',
-  },
-  {
-    name: 'IHK Pfalz Workshop',
-    description:
-      'Als Social-Media-Expertin & Kameracoach leitete Sarah einen Praxis-Workshop zu professionellen Videoinhalten für Instagram & Recruiting.',
-    kategorie: 'Coach / IHK',
-    image: '/images/events/ihk.jpeg',
-  },
-];
+import { events as content } from '@/lib/content';
 
 export default function Events() {
   return (
@@ -65,7 +21,7 @@ export default function Events() {
             viewport={{ once: true }}
             className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5"
           >
-            Portfolio & Referenzen
+            {content.label}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +30,7 @@ export default function Events() {
             transition={{ duration: 0.6 }}
             className="font-playfair text-4xl md:text-5xl text-cream mb-4"
           >
-            Ausgewählte Events
+            {content.heading}
           </motion.h2>
           <div className="gold-divider-center" />
           <motion.p
@@ -84,8 +40,7 @@ export default function Events() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-inter font-light text-muted max-w-xl mx-auto"
           >
-            Ein Einblick in aktuelle Projekte – von politischen Talkrunden bis zu
-            Bühnenmoderationen und Workshops.
+            {content.beschreibung}
           </motion.p>
         </div>
 
@@ -95,7 +50,7 @@ export default function Events() {
           role="list"
           aria-label="Event-Portfolio"
         >
-          {events.map((event, i) => (
+          {content.karten.map((event, i) => (
             <motion.article
               key={event.name}
               initial={{ opacity: 0, y: 24 }}
@@ -136,7 +91,7 @@ export default function Events() {
                     src={event.image}
                     alt={event.name}
                     fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
@@ -214,7 +169,7 @@ export default function Events() {
             className="btn-primary rounded-full"
             aria-label="Buchungsanfrage für Ihr Event stellen"
           >
-            Ihr Event anfragen
+            {content.ctaButton}
           </button>
         </motion.div>
       </div>
