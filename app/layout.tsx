@@ -74,6 +74,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.saraheid.de',
   },
+  verification: {
+    google: 'TNA2XUmUtywlFhWO7vlqPM5jBDMdTsmBf5VYJWYkOzA',
+  },
 };
 
 export default function RootLayout({
