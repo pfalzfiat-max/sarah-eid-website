@@ -7,6 +7,7 @@ import Events from '@/components/Events';
 import PolitikSection from '@/components/PolitikSection';
 import Referenzen from '@/components/Referenzen';
 import VideoReel from '@/components/VideoReel';
+import FAQ from '@/components/FAQ';
 import Kontakt from '@/components/Kontakt';
 import Footer from '@/components/Footer';
 import AdminPanel from '@/components/AdminPanel';
@@ -24,6 +25,7 @@ export default function Home() {
         <PolitikSection />
         <Referenzen />
         <VideoReel />
+        <FAQ />
         <Kontakt />
       </main>
       <Footer />
