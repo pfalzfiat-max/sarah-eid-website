@@ -150,7 +150,7 @@ export const events = {
       description:
         'Moderation des Landesparteitages der Freien Wähler FWG Rheinland-Pfalz.',
       kategorie: 'Politik',
-      image: '/images/events/freiewähler.JPG',
+      image: '/images/events/freiewaehler.jpg',
     },
     {
       name: 'Alexander-Schweitzer-Tour',
