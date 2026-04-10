@@ -150,7 +150,7 @@ export const events = {
       description:
         'Moderation des Landesparteitages der Freien Wähler FWG Rheinland-Pfalz.',
       kategorie: 'Politik',
-      image: '/images/events/freiewähler.jpg',
+      image: '/images/events/freiewähler.JPG',
     },
     {
       name: 'Alexander-Schweitzer-Tour',
@@ -183,7 +183,7 @@ export const events = {
     {
       name: 'Schnieder hoch zwei',
       description:
-        'Politische Gesprächsrunde mit Bundesverkehrsminister Patrick Schnieder und CDU-Spitzenkandidat Gordon Schnieder in Rülzheim – Moderation vor 68 Gästen.',
+        'Politische Gesprächsrunde mit Bundesverkehrsminister Patrick Schnieder und CDU-Spitzenkandidat Gordon Schnieder in Rülzheim – Moderation vor zahlreichen Gästen.',
       kategorie: 'Politik',
       image: '/images/events/schnieder.jpg',
     },
