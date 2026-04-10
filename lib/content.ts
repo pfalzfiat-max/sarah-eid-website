@@ -146,18 +146,18 @@ export const events = {
   // image: Pfad zum Bild im Ordner /public/images/events/
   karten: [
     {
-      name: 'Zukunftsdialog Ahrtal',
+      name: 'Landesparteitag Freie Wähler RLP',
       description:
-        'Politische Talkrunde mit Ministerpräsident Alexander Schweitzer (SPD RLP) über Wiederaufbau, Wirtschaft und Perspektiven der Region.',
+        'Moderation des Landesparteitages der Freien Wähler FWG Rheinland-Pfalz.',
       kategorie: 'Politik',
-      image: '/images/events/ahrtal.jpeg',
+      image: '/images/events/freiewähler.jpg',
     },
     {
       name: 'Alexander-Schweitzer-Tour',
       description:
         'Moderation der politischen Gesprächsrunden zur Zukunft des Weinbaus in der Pfalz – Neustadt-Mußbach.',
       kategorie: 'Politik & Wein',
-      image: '/images/events/IMG_2434.jpeg',
+      image: '/images/events/alexanderschweitzer.jpg',
     },
     {
       name: 'Frankenthaler Pfalzfest',
@@ -181,11 +181,11 @@ export const events = {
       image: '/images/events/purzelmarkt.jpg',
     },
     {
-      name: 'IHK Pfalz Workshop',
+      name: 'Schnieder hoch zwei',
       description:
-        'Als Social-Media-Expertin & Kameracoach leitete Sarah einen Praxis-Workshop zu professionellen Videoinhalten für Instagram & Recruiting.',
-      kategorie: 'Coach / IHK',
-      image: '/images/events/ihk.jpeg',
+        'Politische Gesprächsrunde mit Bundesverkehrsminister Patrick Schnieder und CDU-Spitzenkandidat Gordon Schnieder in Rülzheim – Moderation vor 68 Gästen.',
+      kategorie: 'Politik',
+      image: '/images/events/schnieder.jpg',
     },
   ],
 };
