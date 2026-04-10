@@ -64,12 +64,21 @@ export const metadata: Metadata = {
     description:
       'Sarah Eid – Moderatorin für Firmenevents, politische Veranstaltungen & Messen in Rheinland-Pfalz. Erfahren, diskret und bundesweit buchbar.',
     siteName: 'Sarah Eid – Moderatorin & Sprecherin',
+    images: [
+      {
+        url: 'https://www.saraheid.de/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sarah Eid – Moderatorin & Sprecherin',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sarah Eid | Moderatorin & Sprecherin',
     description:
       'Professionelle Moderatorin für Firmenevents, Messen, Galas & politische Veranstaltungen. Bundesweit buchbar.',
+    images: ['https://www.saraheid.de/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://www.saraheid.de',
