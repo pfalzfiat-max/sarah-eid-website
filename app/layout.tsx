@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
-import { personSchema, localBusinessSchema } from '@/lib/schema';
+import { personSchema, localBusinessSchema, faqSchema } from '@/lib/schema';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -94,6 +94,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
           }}
         />
         <link rel="canonical" href="https://www.saraheid.de" />

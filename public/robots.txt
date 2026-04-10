@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# AI Search Bots – explicitly allowed for citation
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Common Crawl (training only – blocked)
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://www.saraheid.de/sitemap.xml
