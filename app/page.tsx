@@ -10,7 +10,6 @@ import VideoReel from '@/components/VideoReel';
 import FAQ from '@/components/FAQ';
 import Kontakt from '@/components/Kontakt';
 import Footer from '@/components/Footer';
-import AdminPanel from '@/components/AdminPanel';
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
         <Kontakt />
       </main>
       <Footer />
-      <AdminPanel />
     </>
   );
 }
