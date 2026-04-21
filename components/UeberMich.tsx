@@ -2,15 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-const strengths = [
-  'Natürliche Bühnenpräsenz & authentische Ausstrahlung',
-  'Souveräner Umgang mit spontanen Live-Situationen',
-  'Erfahrung mit hochrangigen Persönlichkeiten aus Politik & Wirtschaft',
-  'Weinexpertise: Ehemalige Weinprinzessin Südliche Weinstraße 23/24',
-  'Zuletzt tätig als Moderatorin für politische Großveranstaltungen in Rheinland-Pfalz',
-  'Sprachlich versiert – Vorbereitung auf Zielgruppe und Agenda',
-];
+import { ueberMich } from '@/lib/content';
 
 export default function UeberMich() {
   return (
@@ -40,8 +32,8 @@ export default function UeberMich() {
                 aria-hidden="true"
               />
               <Image
-                src="/images/sarah-portrait.jpg"
-                alt="Sarah Eid – Moderatorin Rheinland-Pfalz"
+                src="/images/sarah+alexander.jpeg"
+                alt="Sarah Eid mit Alexander Schweitzer"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -57,30 +49,24 @@ export default function UeberMich() {
             transition={{ duration: 0.85, delay: 0.2 }}
           >
             <p className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5">
-              Warum Sarah Eid?
+              {ueberMich.label}
             </p>
             <h2 className="font-playfair text-4xl md:text-5xl text-cream mb-2 leading-tight">
-              Mehr als eine Stimme –
-              <span className="block">eine Persönlichkeit.</span>
+              {ueberMich.headingLine1}
+              <span className="block">{ueberMich.headingLine2}</span>
             </h2>
             <div className="gold-divider" />
 
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-5">
-              Als Moderatorin aus Rheinland-Pfalz bringe ich Erfahrung, Empathie und Energie
-              auf die Bühne. Ob große Gala, politische Podiumsdiskussion oder emotionaler
-              Charity-Abend – ich passe mich jedem Event an, ohne meine Handschrift zu verlieren.
+              {ueberMich.bioParagraf1}
             </p>
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-8">
-              Mein Hintergrund als anerkannte Beraterin für Deutschen Wein und ehemalige
-              Weinprinzessin verschafft mir eine besondere Glaubwürdigkeit für Wein- und
-              Genussevents. Zuletzt war ich u.a. als Moderatorin für politische Großveranstaltungen
-              in Rheinland-Pfalz tätig – ein Bereich, der höchste Anforderungen an Professionalität,
-              Neutralität und Spontanität stellt.
+              {ueberMich.bioParagraf2}
             </p>
 
             {/* Strengths */}
             <ul className="space-y-3 mb-10" aria-label="Stärken von Sarah Eid">
-              {strengths.map((strength) => (
+              {ueberMich.staerken.map((strength) => (
                 <li key={strength} className="flex items-start gap-3">
                   <span className="flex-shrink-0 mt-0.5 text-gold font-bold text-sm" aria-hidden="true">✓</span>
                   <span className="font-inter font-light text-sm text-cream/70 leading-relaxed">
@@ -100,16 +86,7 @@ export default function UeberMich() {
                 aria-label="Tätigkeitsbereiche von Sarah Eid"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
-                {[
-                  { icon: '🎤', label: 'Live-Events & Veranstaltungen' },
-                  { icon: '🏢', label: 'Firmen-Events & Jubiläen' },
-                  { icon: '🎪', label: 'Messen & Kongresse' },
-                  { icon: '💬', label: 'Talkrunden & Podiumsdiskussionen' },
-                  { icon: '🎙️', label: 'Podcasts & Radiomoderation' },
-                  { icon: '📺', label: 'TV-Moderation' },
-                  { icon: '📢', label: 'Sprecherin – Imagefilme & Werbespots' },
-                  { icon: '📱', label: 'Social Media Coach (IHK-zertifiziert)' },
-                ].map(({ icon, label }) => (
+                {ueberMich.bereiche.map(({ icon, label }) => (
                   <span
                     key={label}
                     className="inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full font-inter text-xs flex-shrink-0"
@@ -132,8 +109,7 @@ export default function UeberMich() {
               style={{ borderColor: '#C9A84C' }}
             >
               <p className="font-cormorant font-light text-xl text-cream/80 italic leading-relaxed">
-                &ldquo;Professionelle Moderation bedeutet für mich: Vorbereitung,
-                Präsenz und Herzlichkeit – in dieser Reihenfolge.&rdquo;
+                &ldquo;{ueberMich.zitat}&rdquo;
               </p>
               <footer className="font-inter text-[10px] text-gold uppercase tracking-[0.25em] mt-3">
                 Sarah Eid
@@ -145,7 +121,7 @@ export default function UeberMich() {
               className="btn-primary rounded-full"
               aria-label="Buchungsanfrage senden"
             >
-              Jetzt anfragen
+              {ueberMich.ctaButton}
             </button>
           </motion.div>
         </div>
