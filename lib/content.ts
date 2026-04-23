@@ -69,9 +69,9 @@ export const leistungen = {
         'Messe-Moderation, Kongresseröffnungen und Podiumspräsentationen – souverän und zielgruppengerecht.',
     },
     {
-      title: 'Gala & Award-Ceremonies',
+      title: 'Freie Traurednerin',
       description:
-        'Laudatien, Preisverleihungen und Galaabende mit eleganter Bühnenpräsenz und dem richtigen Ton.',
+        'Individuelle Trauzeremonien – konfessionslos, persönlich und von Herzen. Für den schönsten Tag im Leben.',
     },
     {
       title: 'Modenschauen & Fashion',
