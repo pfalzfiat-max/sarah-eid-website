@@ -5,6 +5,7 @@ import Leistungen from '@/components/Leistungen';
 import UeberMich from '@/components/UeberMich';
 import Events from '@/components/Events';
 import PolitikSection from '@/components/PolitikSection';
+import Traurednerin from '@/components/Traurednerin';
 import Referenzen from '@/components/Referenzen';
 import VideoReel from '@/components/VideoReel';
 import FAQ from '@/components/FAQ';
@@ -21,6 +22,7 @@ export default function Home() {
         <Leistungen />
         <UeberMich />
         <Events />
+        <Traurednerin />
         <PolitikSection />
         <Referenzen />
         <VideoReel />
