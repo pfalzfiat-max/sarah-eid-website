@@ -90,7 +90,7 @@ export default function Traurednerin() {
                 aria-hidden="true"
               />
               <Image
-                src="/traurednerin.png"
+                src="/Traurednerin.png"
                 alt="Sarah Eid – Freie Traurednerin"
                 fill
                 className="object-cover object-top"
