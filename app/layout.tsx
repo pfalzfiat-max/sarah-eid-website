@@ -25,7 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Sarah Eid | Moderatorin & Freie Traurednerin – Bundesweit buchbar',
+  title: 'Moderatorin & Freie Traurednerin buchen – Sarah Eid, bundesweit',
   description:
     'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen, Messen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
   keywords: [
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     url: 'https://www.saraheid.de',
-    title: 'Sarah Eid | Moderatorin & Freie Traurednerin – Bundesweit buchbar',
+    title: 'Moderatorin & Freie Traurednerin buchen – Sarah Eid, bundesweit',
     description:
       'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
     siteName: 'Sarah Eid – Moderatorin & Freie Traurednerin',
