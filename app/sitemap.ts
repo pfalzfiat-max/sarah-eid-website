@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: 'https://www.saraheid.de/freie-traurednerin',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.saraheid.de/impressum',
       lastModified: new Date(),
       changeFrequency: 'yearly',
