@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
-import { personSchema, localBusinessSchema, faqSchema } from '@/lib/schema';
+import { personSchema, localBusinessSchema, faqSchema, webSiteSchema, serviceSchema } from '@/lib/schema';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -25,9 +25,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Sarah Eid | Moderatorin & Sprecherin – Bundesweit buchbar',
+  title: 'Sarah Eid | Moderatorin & Freie Traurednerin – Bundesweit buchbar',
   description:
-    'Sarah Eid – Moderatorin für Firmenevents, politische Veranstaltungen & Messen in Rheinland-Pfalz. Erfahren, diskret und bundesweit buchbar.',
+    'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen, Messen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
   keywords: [
     'Moderatorin buchen',
     'Event Moderatorin Deutschland',
@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     'Podiumsdiskussion Moderatorin',
     'Wahlkampfveranstaltung Moderatorin',
     'Parteitagsmoderation',
+    'Freie Traurednerin',
+    'Freie Traurednerin Rheinland-Pfalz',
+    'Freie Trauung buchen',
+    'Hochzeitsrednerin',
     'Sarah Eid',
   ],
   authors: [{ name: 'Sarah Eid' }],
@@ -60,10 +64,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     url: 'https://www.saraheid.de',
-    title: 'Sarah Eid | Moderatorin & Sprecherin – Bundesweit buchbar',
+    title: 'Sarah Eid | Moderatorin & Freie Traurednerin – Bundesweit buchbar',
     description:
-      'Sarah Eid – Moderatorin für Firmenevents, politische Veranstaltungen & Messen in Rheinland-Pfalz. Erfahren, diskret und bundesweit buchbar.',
-    siteName: 'Sarah Eid – Moderatorin & Sprecherin',
+      'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
+    siteName: 'Sarah Eid – Moderatorin & Freie Traurednerin',
     images: [
       {
         url: 'https://www.saraheid.de/og-image.jpg',
@@ -114,6 +118,21 @@ export default function RootLayout({
             __html: JSON.stringify(faqSchema),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteSchema),
+          }}
+        />
+        {serviceSchema.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(s),
+            }}
+          />
+        ))}
         <link rel="canonical" href="https://www.saraheid.de" />
       </head>
       <body>{children}</body>

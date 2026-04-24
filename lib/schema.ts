@@ -89,6 +89,63 @@ export const localBusinessSchema = {
   priceRange: 'Auf Anfrage',
 };
 
+export const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Sarah Eid – Moderatorin & Sprecherin',
+  url: 'https://www.saraheid.de',
+  description:
+    'Offizielle Website von Sarah Eid – professionelle Moderatorin und freie Traurednerin aus Rheinland-Pfalz, bundesweit buchbar.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://www.saraheid.de/#kontakt',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+export const serviceSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Moderation – Firmenevents & Live-Events',
+    description:
+      'Professionelle Event-Moderation für Firmenevents, Messen, Kongresse, Galas und Sportevents. Bundesweit buchbar.',
+    provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
+    areaServed: 'DE',
+    serviceType: 'Eventmoderation',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Politikmoderation',
+    description:
+      'Moderation von Podiumsdiskussionen, Parteitagen und politischen Bürgerevents in Rheinland-Pfalz und bundesweit.',
+    provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
+    areaServed: 'DE',
+    serviceType: 'Politikmoderation',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Freie Traurednerin',
+    description:
+      'Individuelle freie Trauzeremonie – konfessionslos, persönlich und von Herzen. Für den schönsten Tag im Leben. Bundesweit buchbar.',
+    provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
+    areaServed: 'DE',
+    serviceType: 'Freie Trauung',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Sprecherin – Imagefilm & Werbung',
+    description:
+      'Professionelle Sprecherin für Imagefilme, Erklärvideos, Radio-Spots und TV-Werbung.',
+    provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
+    areaServed: 'DE',
+    serviceType: 'Voice-Over & Sprecherin',
+  },
+];
+
 export const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

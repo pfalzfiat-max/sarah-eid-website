@@ -25,11 +25,11 @@ export const social = {
 
 // ─── HERO SEKTION ────────────────────────────────────────────
 export const hero = {
-  tagline: 'Professionelle Moderatorin · Bundesweit buchbar',
+  tagline: 'Moderatorin & Freie Traurednerin · Bundesweit buchbar',
   name: 'Sarah Eid',
   subtitle: 'Die Stimme für Ihren besonderen Moment.',
   beschreibung:
-    'Moderatorin für Veranstaltungen, Live-Events, Messen, Talkrunden, Podcasts, TV & Radio – sowie Sprecherin für Imagefilme und Werbung.',
+    'Moderatorin buchen in Rheinland-Pfalz und bundesweit – für Live-Events, Messen, politische Veranstaltungen, TV & Radio. Freie Traurednerin für individuelle Hochzeitszeremonien.',
   ctaPrimary: 'Jetzt anfragen',
   ctaSecondary: 'Leistungen entdecken',
   badge: 'Moderatorin',
@@ -47,7 +47,7 @@ export const leistungen = {
   label: 'Leistungen',
   heading: 'Was ich für Sie moderiere',
   beschreibung:
-    'Als Event Moderatorin Deutschland bringe ich für jeden Anlass die richtige Energie – von Galas bis zu politischen Podiumsdiskussionen in Rheinland-Pfalz und bundesweit.',
+    'Als Moderatorin buchen in Rheinland-Pfalz und bundesweit – von politischen Podiumsdiskussionen über Firmenevents bis zur freien Trauung. Sarah Eid bringt für jeden Anlass die richtige Energie.',
   ctaHinweis: 'Ihr Event ist nicht dabei?',
   ctaHinweisText: 'Kein Problem – sprechen Sie mich an!',
   ctaButton: 'Moderatorin buchen',
