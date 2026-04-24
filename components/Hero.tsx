@@ -2,19 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { hero } from '@/lib/content';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.85, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
-
-const stats = [
-  { value: '50+', label: 'Events' },
-  { value: '10+', label: 'Jahre' },
-  { value: '6', label: 'Bundesländer' },
-  { value: '2.400+', label: 'Follower' },
-];
 
 export default function Hero() {
   const scrollToKontakt = () =>
@@ -33,12 +27,11 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 opacity-[0.07]">
         <Image
           src="/images/sarah-f1.jpg"
-          alt=""
+          alt="Sarah Eid – Moderatorin aus Rheinland-Pfalz"
           fill
           priority={true}
           className="object-cover object-center"
           sizes="100vw"
-          aria-hidden="true"
         />
       </div>
 
@@ -64,7 +57,7 @@ export default function Hero() {
               {...fadeUp(0.2)}
               className="font-inter text-xs tracking-[0.35em] uppercase text-gold mb-8"
             >
-              Professionelle Moderatorin · Bundesweit buchbar
+              {hero.tagline}
             </motion.p>
 
             <motion.h1
@@ -72,7 +65,10 @@ export default function Hero() {
               className="font-playfair font-bold leading-[1.05] mb-6"
               style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
             >
-              Sarah Eid
+              Moderatorin &amp; Freie Traurednerin
+              <span className="block text-gold" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+                {hero.name}
+              </span>
             </motion.h1>
 
             {/* Gold divider */}
@@ -91,7 +87,7 @@ export default function Hero() {
               className="font-cormorant font-light mb-4"
               style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: 'rgba(245,240,232,0.75)', letterSpacing: '0.02em' }}
             >
-              Die Stimme für Ihren besonderen Moment.
+              {hero.subtitle}
             </motion.p>
 
             {/* Subline */}
@@ -99,8 +95,7 @@ export default function Hero() {
               {...fadeUp(1.0)}
               className="font-inter font-light text-base text-cream/50 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-10"
             >
-              Moderatorin für Veranstaltungen, Live-Events, Messen, Talkrunden, Podcasts, TV &amp; Radio –
-              sowie Sprecherin für Imagefilme und Werbung.
+              {hero.beschreibung}
             </motion.p>
 
             {/* CTAs */}
@@ -113,14 +108,14 @@ export default function Hero() {
                 className="btn-primary rounded-full px-10 py-4 w-full sm:w-auto"
                 aria-label="Jetzt Buchungsanfrage stellen"
               >
-                Jetzt anfragen
+                {hero.ctaPrimary}
               </button>
               <button
                 onClick={scrollToLeistungen}
                 className="btn-secondary rounded-full px-10 py-4 w-full sm:w-auto"
                 aria-label="Leistungen von Sarah Eid entdecken"
               >
-                Leistungen entdecken
+                {hero.ctaSecondary}
               </button>
             </motion.div>
 
@@ -131,7 +126,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 1.4 }}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-8"
             >
-              {stats.map((stat, i) => (
+              {hero.stats.map((stat, i) => (
                 <div key={stat.label} className="flex items-center gap-8">
                   {i > 0 && (
                     <div className="w-px h-8" style={{ background: 'rgba(37,37,48,1)' }} aria-hidden="true" />
@@ -197,8 +192,8 @@ export default function Hero() {
                   border: '1px solid rgba(201,168,76,0.4)',
                 }}
               >
-                <p className="font-inter text-[9px] text-gold uppercase tracking-[0.3em]">Moderatorin</p>
-                <p className="font-playfair text-cream text-sm mt-0.5">Rheinland-Pfalz · Bundesweit</p>
+                <p className="font-inter text-[9px] text-gold uppercase tracking-[0.3em]">{hero.badge}</p>
+                <p className="font-playfair text-cream text-sm mt-0.5">{hero.badgeRegion}</p>
               </div>
             </div>
           </motion.div>

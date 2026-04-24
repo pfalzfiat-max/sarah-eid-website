@@ -100,8 +100,8 @@ export default function FreieTraurednerinPage() {
               Freie Traurednerin · Rheinland-Pfalz & bundesweit
             </p>
             <h1 className="font-playfair text-4xl md:text-5xl leading-tight mb-4" style={{ color: '#F5F0E8' }}>
-              Ihr schönster Moment –<br />
-              <span style={{ color: '#C9A84C' }}>mit den richtigen Worten.</span>
+              Freie Traurednerin in Rheinland-Pfalz –<br />
+              <span style={{ color: '#C9A84C' }}>Sarah Eid</span>
             </h1>
             <div className="w-12 h-px mb-6" style={{ background: '#C9A84C' }} />
             <p className="font-inter font-light text-base leading-relaxed mb-4" style={{ color: 'rgba(245,240,232,0.6)' }}>
