@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Über mich', href: '#ueber-mich' },
   { label: 'Events', href: '#events' },
+  { label: 'Traurednerin', href: '/freie-traurednerin', external: true },
   { label: 'Politik', href: '#politik' },
   { label: 'Referenzen', href: '#referenzen' },
   { label: 'Showreel', href: '#showreel' },
@@ -59,13 +60,22 @@ export default function Navbar() {
             <ul className="hidden lg:flex items-center gap-8" role="list">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <button
-                    onClick={() => handleNavClick(item.href)}
-                    className="font-inter text-xs font-medium tracking-[0.12em] uppercase text-cream/60 hover:text-gold transition-colors duration-300"
-                    aria-label={`Zur Sektion ${item.label} springen`}
-                  >
-                    {item.label}
-                  </button>
+                  {item.external ? (
+                    <Link
+                      href={item.href}
+                      className="font-inter text-xs font-medium tracking-[0.12em] uppercase text-cream/60 hover:text-gold transition-colors duration-300"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(item.href)}
+                      className="font-inter text-xs font-medium tracking-[0.12em] uppercase text-cream/60 hover:text-gold transition-colors duration-300"
+                      aria-label={`Zur Sektion ${item.label} springen`}
+                    >
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
               <li>
@@ -124,16 +134,33 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-2">
               {navItems.map((item, i) => (
-                <motion.button
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                  onClick={() => handleNavClick(item.href)}
-                  className="font-playfair text-3xl text-cream/80 hover:text-gold transition-colors duration-300 py-3"
-                >
-                  {item.label}
-                </motion.button>
+                item.external ? (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.07 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="font-playfair text-3xl text-cream/80 hover:text-gold transition-colors duration-300 py-3 block"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    key={item.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.07 }}
+                    onClick={() => handleNavClick(item.href)}
+                    className="font-playfair text-3xl text-cream/80 hover:text-gold transition-colors duration-300 py-3"
+                  >
+                    {item.label}
+                  </motion.button>
+                )
               ))}
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
