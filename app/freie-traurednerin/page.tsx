@@ -33,22 +33,22 @@ const leistungen = [
   {
     title: 'Persönliches Kennenlerngespräch',
     description:
-      'In einem ausführlichen Vorgespräch lernt Sarah Eid Sie und Ihre Liebesgeschichte kennen – die Basis für eine Rede, die wirklich zu Ihnen passt.',
+      'In einem ausführlichen Vorgespräch lerne ich Sie und Ihre Liebesgeschichte kennen – die Basis für eine Rede, die wirklich zu Ihnen passt.',
   },
   {
     title: 'Individuelle Zeremonie',
     description:
-      'Kein Standardtext, kein Schema – jede Trauung wird von Grund auf neu geschrieben und auf das Paar, den Ort und die Atmosphäre abgestimmt.',
+      'Kein Standardtext, kein Schema – ich schreibe jede Trauung von Grund auf neu und stimme sie auf das Paar, den Ort und die Atmosphäre ab.',
   },
   {
     title: 'Konfessionslos & offen',
     description:
-      'Die freie Trauung steht allen offen – unabhängig von Religion, Herkunft oder Familienmodell. Standesamtlich oder als alleinige Zeremonie.',
+      'Ich traue alle – unabhängig von Religion, Herkunft oder Familienmodell. Standesamtlich ergänzend oder als alleinige Zeremonie.',
   },
   {
     title: 'Bundesweit buchbar',
     description:
-      'Ob Weingut in der Pfalz, Schloss in Rheinland-Pfalz oder Destinationswedding – Sarah Eid reist zu Ihnen.',
+      'Ob Weingut in der Pfalz, Schloss in Rheinland-Pfalz oder Destinationswedding – ich reise zu Ihnen.',
   },
 ];
 
@@ -56,22 +56,22 @@ const faqs = [
   {
     frage: 'Was kostet eine freie Trauung mit Sarah Eid?',
     antwort:
-      'Die Kosten variieren je nach Aufwand, Anfahrt und Umfang der Zeremonie. Gerne erstellt Sarah Eid Ihnen auf Anfrage ein individuelles Angebot.',
+      'Die Kosten variieren je nach Aufwand, Anfahrt und Umfang der Zeremonie. Ich erstelle Ihnen gerne auf Anfrage ein individuelles Angebot.',
   },
   {
     frage: 'Wie weit im Voraus soll ich buchen?',
     antwort:
-      'Empfohlen wird eine Buchung mindestens 6–12 Monate vor dem Hochzeitsdatum, da beliebte Termine schnell vergeben sind.',
+      'Ich empfehle eine Buchung mindestens 6–12 Monate vor dem Hochzeitsdatum, da beliebte Termine schnell vergeben sind.',
   },
   {
     frage: 'Wie läuft die Zusammenarbeit ab?',
     antwort:
-      'Nach der Anfrage folgt ein persönliches Kennenlerngespräch. Danach schreibt Sarah Eid Ihre individuelle Rede, die Sie vor dem großen Tag zur Abstimmung erhalten.',
+      'Nach Ihrer Anfrage führen wir ein persönliches Kennenlerngespräch. Danach schreibe ich Ihre individuelle Rede, die Sie vor dem großen Tag zur Abstimmung erhalten.',
   },
   {
     frage: 'Ist die freie Trauung rechtsgültig?',
     antwort:
-      'Die freie Trauung ist eine symbolische Zeremonie. Für die rechtliche Gültigkeit ist ein vorheriger Standesamtstermin notwendig – den freien Teil übernimmt Sarah Eid.',
+      'Die freie Trauung ist eine symbolische Zeremonie. Für die rechtliche Gültigkeit ist ein vorheriger Standesamtstermin notwendig – den freien, persönlichen Teil übernehme ich.',
   },
 ];
 
@@ -105,10 +105,10 @@ export default function FreieTraurednerinPage() {
             </h1>
             <div className="w-12 h-px mb-6" style={{ background: '#C9A84C' }} />
             <p className="font-inter font-light text-base leading-relaxed mb-4" style={{ color: 'rgba(245,240,232,0.6)' }}>
-              Als freie Traurednerin gestaltet Sarah Eid Ihre Hochzeitszeremonie individuell, persönlich und von Herzen – unabhängig von Konfession, Ort und Stil. Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
+              Als freie Traurednerin gestalte ich Ihre Hochzeitszeremonie individuell, persönlich und von Herzen – unabhängig von Konfession, Ort und Stil. Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
             </p>
             <p className="font-inter font-light text-base leading-relaxed mb-10" style={{ color: 'rgba(245,240,232,0.6)' }}>
-              Mit echtem Einfühlungsvermögen, natürlicher Wärme und dem Gespür für den richtigen Moment begleitet sie Sie durch eine Zeremonie, die alle Anwesenden berührt.
+              Mit echtem Einfühlungsvermögen, natürlicher Wärme und dem Gespür für den richtigen Moment begleite ich Sie durch eine Zeremonie, die alle Anwesenden berührt.
             </p>
             <Link
               href="/#kontakt"
@@ -210,7 +210,7 @@ export default function FreieTraurednerinPage() {
               Bereit für Ihren besonderen Moment?
             </h2>
             <p className="font-inter font-light text-base leading-relaxed mb-8" style={{ color: 'rgba(245,240,232,0.6)' }}>
-              Schreiben Sie Sarah Eid an – und machen Sie Ihre Hochzeit zu einem unvergesslichen Erlebnis.
+              Schreiben Sie mir – und gemeinsam machen wir Ihre Hochzeit zu einem unvergesslichen Erlebnis.
             </p>
             <Link
               href="/#kontakt"

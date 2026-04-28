@@ -31,10 +31,10 @@ export default function Traurednerin() {
             <div className="gold-divider" />
 
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-5">
-              Eine Hochzeit ist der bedeutendste Tag im Leben zweier Menschen. Als freie Traurednerin gestaltet Sarah Eid Ihre Zeremonie individuell, persönlich und von Herzen – unabhängig von Konfession oder Ort. Ob im Freien, im Weingut, im Schloss oder im kleinen Kreis: Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
+              Eine Hochzeit ist der bedeutendste Tag im Leben zweier Menschen. Als freie Traurednerin gestalte ich Ihre Zeremonie individuell, persönlich und von Herzen – unabhängig von Konfession oder Ort. Ob im Freien, im Weingut, im Schloss oder im kleinen Kreis: Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
             </p>
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-8">
-              In einem persönlichen Vorgespräch lernt Sarah Eid Sie und Ihre Geschichte kennen – und schreibt daraus eine Rede, die zu Ihnen passt. Mit natürlicher Wärme, echtem Einfühlungsvermögen und dem Gespür für den richtigen Moment begleitet sie Sie durch eine Zeremonie, die alle Anwesenden berührt.
+              In einem persönlichen Vorgespräch lerne ich Sie und Ihre Geschichte kennen – und schreibe daraus eine Rede, die wirklich zu Ihnen passt. Mit natürlicher Wärme, echtem Einfühlungsvermögen und dem Gespür für den richtigen Moment begleite ich Sie durch eine Zeremonie, die alle Anwesenden berührt.
             </p>
 
             <ul className="space-y-3 mb-10" aria-label="Leistungen als Traurednerin">

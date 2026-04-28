@@ -27,9 +27,9 @@ export const social = {
 export const hero = {
   tagline: 'Moderatorin & Freie Traurednerin · Bundesweit buchbar',
   name: 'Sarah Eid',
-  subtitle: 'Die Stimme für Ihren besonderen Moment.',
+  subtitle: 'Ich bin die Stimme für Ihren besonderen Moment.',
   beschreibung:
-    'Moderatorin buchen in Rheinland-Pfalz und bundesweit – für Live-Events, Messen, politische Veranstaltungen, TV & Radio. Freie Traurednerin für individuelle Hochzeitszeremonien.',
+    'Ich moderiere Live-Events, Messen, politische Veranstaltungen, TV & Radio – bundesweit. Und ich begleite Sie als freie Traurednerin durch den schönsten Tag Ihres Lebens.',
   ctaPrimary: 'Jetzt anfragen',
   ctaSecondary: 'Leistungen entdecken',
   badge: 'Moderatorin',
@@ -47,7 +47,7 @@ export const leistungen = {
   label: 'Leistungen',
   heading: 'Was ich für Sie moderiere',
   beschreibung:
-    'Als Moderatorin buchen in Rheinland-Pfalz und bundesweit – von politischen Podiumsdiskussionen über Firmenevents bis zur freien Trauung. Sarah Eid bringt für jeden Anlass die richtige Energie.',
+    'Von politischen Podiumsdiskussionen über Firmenevents bis zur freien Trauung – ich bringe für jeden Anlass die richtige Energie. Bundesweit und mit Herz.',
   ctaHinweis: 'Ihr Event ist nicht dabei?',
   ctaHinweisText: 'Kein Problem – sprechen Sie mich an!',
   ctaButton: 'Moderatorin buchen',
@@ -56,54 +56,54 @@ export const leistungen = {
     {
       title: 'Politik & Gesellschaft',
       description:
-        'Podiumsdiskussionen, Parteiveranstaltungen und politische Bürgerevents – mit Fingerspitzengefühl und neutraler Professionalität.',
+        'Ich moderiere Podiumsdiskussionen, Parteiveranstaltungen und politische Bürgerevents – mit Fingerspitzengefühl und überparteilicher Professionalität.',
     },
     {
       title: 'Firmenevents & Jubiläen',
       description:
-        'Jubiläumsfeiern und Corporate Events professionell und mit Stil moderieren.',
+        'Jubiläumsfeiern und Corporate Events moderiere ich professionell, mit Stil und dem richtigen Gespür für Ihre Unternehmenskultur.',
     },
     {
       title: 'Messen & Kongresse',
       description:
-        'Messe-Moderation, Kongresseröffnungen und Podiumspräsentationen – souverän und zielgruppengerecht.',
+        'Ob Messemoderation, Kongresseröffnung oder Podiumspräsentation – ich führe souverän und zielgruppengerecht durch Ihr Programm.',
     },
     {
       title: 'Freie Traurednerin',
       description:
-        'Individuelle Trauzeremonien – konfessionslos, persönlich und von Herzen. Für den schönsten Tag im Leben.',
+        'Ich gestalte Ihre Trauzeremonie individuell, konfessionslos und von Herzen – für den schönsten Tag Ihres Lebens.',
     },
     {
       title: 'Modenschauen & Fashion',
       description:
-        'Runway-Shows, Fashion Weeks und Präsentationen – dynamisch, stylisch und im Takt der Kollektion.',
+        'Runway-Shows, Fashion Weeks und Präsentationen begleite ich dynamisch, stylisch und im Takt der Kollektion.',
     },
     {
       title: 'Charity & Benefiz',
       description:
-        'Benefizabende und Spendenveranstaltungen mit Empathie, Herz und professioneller Moderation.',
+        'Benefizabende und Spendenveranstaltungen moderiere ich mit Empathie, Herz und der nötigen Seriosität.',
     },
     {
       title: 'Sportevents & Konzerte',
       description:
-        'Live-Begleitung von Sportveranstaltungen, Konzerten und Open-Air-Events – mitreißend und professionell.',
+        'Sportveranstaltungen, Konzerte und Open-Air-Events begleite ich live – mitreißend und mit echter Begeisterung.',
     },
     {
       title: 'Imagefilm-Sprecherin',
       description:
-        'Klare, markante Off-Stimme für Imagefilme, Erklärvideos und Unternehmensporträts.',
+        'Meine Stimme steht für Imagefilme, Erklärvideos und Unternehmensporträts – klar, markant und auf den Punkt.',
     },
     {
       title: 'Werbespots (Radio & TV)',
       description:
-        'Stimmstarke Sprecher-Leistungen für Radio-Spots und TV-Werbung – professionell und einprägsam.',
+        'Für Radio-Spots und TV-Werbung bringe ich stimmliche Präsenz und Professionalität – einprägsam und wirkungsvoll.',
     },
   ],
 };
 
 // ─── ÜBER MICH SEKTION ───────────────────────────────────────
 export const ueberMich = {
-  label: 'Warum Sarah Eid?',
+  label: 'Über mich',
   headingLine1: 'Mehr als eine Stimme –',
   headingLine2: 'eine Persönlichkeit.',
   bioParagraf1:
@@ -148,14 +148,14 @@ export const events = {
     {
       name: 'Landesparteitag Freie Wähler RLP',
       description:
-        'Moderation des Landesparteitages der Freien Wähler FWG Rheinland-Pfalz.',
+        'Ich durfte den Landesparteitag der Freien Wähler FWG Rheinland-Pfalz moderieren.',
       kategorie: 'Politik',
       image: '/images/events/freiewaehler.jpg',
     },
     {
       name: 'Alexander-Schweitzer-Tour',
       description:
-        'Moderation der politischen Gesprächsrunden zur Zukunft des Weinbaus in der Pfalz – Neustadt-Mußbach.',
+        'Ich moderierte die politischen Gesprächsrunden zur Zukunft des Weinbaus in der Pfalz – in Neustadt-Mußbach.',
       kategorie: 'Politik & Wein',
       image: '/images/events/alexanderschweitzer.jpg',
     },
@@ -169,21 +169,21 @@ export const events = {
     {
       name: 'Talkrunde Mainzer Dom',
       description:
-        'Outdoor-Moderation in der Landeshauptstadt Mainz – professionell, mitreißend, mit Bühnenpräsenz und starker Außenwirkung.',
+        'Ich moderierte diese Outdoor-Talkrunde in der Landeshauptstadt Mainz – live, mitreißend und mit starker Außenwirkung.',
       kategorie: 'Live-Event',
       image: '/images/events/talkrunde-mainzer-dom.jpg',
     },
     {
       name: 'Billigheimer Purzelmarkt',
       description:
-        'Moderation des PreOpening-Abends beim 575. Purzelmarkt – inklusive der feierlichen Krönung der neuen Purzelmarktkönigin.',
+        'Ich führte durch den PreOpening-Abend beim 575. Purzelmarkt – inklusive der feierlichen Krönung der neuen Purzelmarktkönigin.',
       kategorie: 'Brauchtum',
       image: '/images/events/purzelmarkt.jpg',
     },
     {
       name: 'Schnieder hoch zwei',
       description:
-        'Politische Gesprächsrunde mit Bundesverkehrsminister Patrick Schnieder und CDU-Spitzenkandidat Gordon Schnieder in Rülzheim – Moderation vor zahlreichen Gästen.',
+        'Ich moderierte die politische Gesprächsrunde mit Bundesverkehrsminister Patrick Schnieder und CDU-Spitzenkandidat Gordon Schnieder in Rülzheim – vor zahlreichen Gästen.',
       kategorie: 'Politik',
       image: '/images/events/schnieder.jpg',
     },
@@ -195,11 +195,11 @@ export const politik = {
   label: 'Politikmoderation',
   heading: 'Moderation auf höchstem politischen Niveau.',
   paragraf1:
-    'Politische Veranstaltungen verlangen besondere Sorgfalt, Neutralität und absolute Professionalität. Sarah Eid moderiert Parteiveranstaltungen, Podiumsdiskussionen und politische Bürgerevents mit Fingerspitzengefühl.',
+    'Politische Veranstaltungen verlangen besondere Sorgfalt, Neutralität und absolute Professionalität. Ich moderiere Parteiveranstaltungen, Podiumsdiskussionen und politische Bürgerevents mit Fingerspitzengefühl.',
   paragraf2:
-    'Zu ihren Referenzen zählen Veranstaltungen im Umfeld der rheinland-pfälzischen Landespolitik – darunter Veranstaltungen im Kontext der Landtagswahl 2026.',
+    'Zu meinen Referenzen zählen Veranstaltungen im Umfeld der rheinland-pfälzischen Landespolitik – darunter Veranstaltungen im Kontext der Landtagswahl 2026.',
   hinweis:
-    'Politische Anfragen werden ausschließlich nach persönlichem Vorgespräch und sorgfältiger Prüfung angenommen.',
+    'Politische Anfragen nehme ich ausschließlich nach persönlichem Vorgespräch und sorgfältiger Prüfung an.',
   ctaButton: 'Anfrage stellen',
   pills: ['Diskret & vertraulich', 'Überparteilich professionell', 'Live-erfahren & belastbar'],
 };
@@ -274,5 +274,5 @@ export const footer = {
   name: 'Sarah Eid',
   berufsbezeichnung: 'Moderatorin & Sprecherin',
   beschreibung:
-    'Professionelle Event-Moderation und Sprecherin aus Rheinland-Pfalz – bundesweit buchbar.',
+    'Ich moderiere Events und spreche für Imagefilme & Werbung – aus Rheinland-Pfalz, bundesweit buchbar.',
 };
