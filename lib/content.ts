@@ -25,7 +25,7 @@ export const social = {
 
 // ─── HERO SEKTION ────────────────────────────────────────────
 export const hero = {
-  tagline: 'Moderatorin & Freie Traurednerin · Bundesweit buchbar',
+  tagline: 'Moderatorin · Bundesweit buchbar',
   name: 'Sarah Eid',
   subtitle: 'Ich bin die Stimme für Ihren besonderen Moment.',
   beschreibung:

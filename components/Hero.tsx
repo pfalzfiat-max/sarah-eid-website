@@ -65,7 +65,7 @@ export default function Hero() {
               className="font-playfair font-bold leading-[1.05] mb-6"
               style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
             >
-              Moderatorin &amp; Freie Traurednerin
+              Moderatorin
               <span className="block text-gold" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
                 {hero.name}
               </span>
