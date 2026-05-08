@@ -75,8 +75,8 @@ export default function ImpressumPage() {
               Umsatzsteuer-Identifikationsnummer
             </h2>
             <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
-              [wird nachgetragen]
+              USt-IdNr.: DE423888887<br />
+              Steuernummer: 24/036/43114
             </p>
           </section>
 
@@ -86,7 +86,8 @@ export default function ImpressumPage() {
             </h2>
             <p>
               Sarah Eid<br />
-              [Adresse wie oben]
+              Guttenbergstr. 40<br />
+              76889 Oberotterbach
             </p>
           </section>
 
