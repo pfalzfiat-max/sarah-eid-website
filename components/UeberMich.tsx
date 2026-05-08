@@ -41,7 +41,7 @@ export default function UeberMich() {
             {/* Bild 2 – Sport */}
             <div className="relative aspect-[3/4] mt-8">
               <Image
-                src="/fck.jpg"
+                src="/fck2.jpg"
                 alt="Sarah Eid beim Sport-Event"
                 fill
                 className="object-cover object-top"
