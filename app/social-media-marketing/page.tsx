@@ -124,6 +124,28 @@ export default function SocialMediaMarketingPage() {
           </div>
         </section>
 
+        {/* Impressionen */}
+        <section className="py-16 px-6">
+          <div className="max-w-5xl mx-auto">
+            <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-4 text-center" style={{ color: '#C9A84C' }}>
+              Impressionen
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {['/social1.jpg', '/social2.jpg', '/social3.jpg'].map((src, i) => (
+                <div key={src} className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={src}
+                    alt={`Sarah Eid Social Media Coaching – Impression ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Über mich */}
         <section className="py-20 px-6">
           <div className="max-w-3xl mx-auto">
