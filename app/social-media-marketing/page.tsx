@@ -33,9 +33,9 @@ const leistungen = [
       'Top-Talente für Ihr Unternehmen gewinnen: schnelle Bewerbung innerhalb von 2 Minuten, ohne Anschreiben und ohne Lebenslauf – über gezielte Recruiting-Kampagnen.',
   },
   {
-    title: 'Sicher auftreten & präsentieren',
+    title: 'Videoproduktion & Imagefilme',
     description:
-      'In meinem Intensivtraining lernen Sie: klarer Einsatz von Körpersprache, Mimik und Gestik, Stimmtraining, authentisches Auftreten, Umgang mit Lampenfieber sowie strukturierte Präsentationen mit Storytelling – inkl. Praxisübungen und Feedbackrunden.',
+      'Von der Idee bis zum fertigen Film: Ich produziere professionelle Imagefilme, Recruitingfilme und Social-Media-Videos mit professionellem Equipment. Dazu gehören auch spektakuläre Drohnenaufnahmen – für einen unvergesslichen ersten Eindruck.',
   },
   {
     title: 'Video-Workshop: Do it yourself',
@@ -146,7 +146,7 @@ export default function SocialMediaMarketingPage() {
                     'IHK-Coach für Unternehmen & Mitarbeiter',
                     'Content-Creation: Foto, Video, Reels & Texte',
                     'Social-Recruiting: Talente gewinnen ohne Lebenslauf',
-                    'Auftrittstraining & Präsentationscoaching',
+                    'Imagefilme, Recruitingfilme & Drohnenaufnahmen',
                     'Video-Workshops: Professionell mit dem Smartphone',
                   ].map((punkt) => (
                     <li key={punkt} className="flex items-start gap-3">
