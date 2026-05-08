@@ -204,7 +204,7 @@ export default function SocialMediaMarketingPage() {
       <footer className="border-t py-8 px-6 text-center" style={{ borderColor: '#D9D0C0' }}>
         <div className="flex justify-center gap-8 flex-wrap">
           <Link href="/" className="font-inter text-xs uppercase tracking-widest" style={{ color: '#6B6B7A' }}>
-            Startseite
+            Moderatorin
           </Link>
           <Link href="/freie-traurednerin" className="font-inter text-xs uppercase tracking-widest" style={{ color: '#6B6B7A' }}>
             Traurednerin
