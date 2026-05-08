@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -63,6 +64,15 @@ export default function SocialMediaMarketingPage() {
 
         {/* Hero */}
         <section className="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/Logo_Sarah_Eid_Social_Media_bunt_schwarz_Rahmen.jpg"
+              alt="Sarah Eid Social Media – Logo"
+              width={180}
+              height={180}
+              className="object-contain"
+            />
+          </div>
           <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-5" style={{ color: '#C9A84C' }}>
             Seit 2016 · IHK-zertifiziert
           </p>
@@ -74,7 +84,7 @@ export default function SocialMediaMarketingPage() {
             Als Digital Native weiß ich genau, wie die sozialen Netzwerke ticken und welche Inhalte bei Ihren Interessenten ankommen.
           </p>
           <p className="font-inter font-light text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'rgba(10,10,15,0.6)' }}>
-            Ich arbeite seit über 8 Jahren erfolgreich im Bereich Social Media für verschiedene Unternehmen – habe Kanäle aufgebaut, betreut und ausgebaut.
+            Ich arbeite seit über 10 Jahren erfolgreich im Bereich Social Media für verschiedene Unternehmen – habe Kanäle aufgebaut, betreut und ausgebaut.
           </p>
           <Link
             href="/#kontakt"
