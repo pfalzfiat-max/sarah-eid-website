@@ -21,22 +21,36 @@ export default function UeberMich() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85 }}
-            className="relative"
+            className="relative grid grid-cols-2 gap-4"
           >
-            {/* Outer gold frame */}
-            <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0">
-              {/* Gold border offset */}
+            {/* Bild 1 – Politik */}
+            <div className="relative aspect-[3/4]">
               <div
-                className="absolute -top-4 -right-4 w-full h-full hidden lg:block"
+                className="absolute -top-3 -right-3 w-full h-full hidden lg:block"
                 style={{ border: '1px solid rgba(201,168,76,0.4)' }}
                 aria-hidden="true"
               />
               <Image
                 src="/images/sarah+alexander.jpeg"
-                alt="Sarah Eid mit Alexander Schweitzer"
+                alt="Sarah Eid mit Ministerpräsident Alexander Schweitzer"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            {/* Bild 2 – Sport */}
+            <div className="relative aspect-[3/4] mt-8">
+              <Image
+                src="/fck.jpg"
+                alt="Sarah Eid beim Sport-Event"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div
+                className="absolute -bottom-3 -left-3 w-full h-full hidden lg:block"
+                style={{ border: '1px solid rgba(201,168,76,0.25)' }}
+                aria-hidden="true"
               />
             </div>
           </motion.div>
