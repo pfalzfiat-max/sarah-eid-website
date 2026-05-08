@@ -124,55 +124,81 @@ export default function SocialMediaMarketingPage() {
           </div>
         </section>
 
-        {/* Impressionen */}
-        <section className="py-16 px-6">
+        {/* Bild 1 – nach Leistungen */}
+        <section className="px-6 py-12">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {['/social1.jpg', '/social2.jpg', '/social3.jpg'].map((src, i) => (
-                <div key={src} className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={`Sarah Eid Social Media Coaching – Impression ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-              ))}
+            <div className="relative w-full h-72 md:h-96 overflow-hidden">
+              <Image
+                src="/social1.jpg"
+                alt="Sarah Eid – Content-Creation für Social Media"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
             </div>
           </div>
         </section>
 
         {/* Über mich */}
         <section className="py-20 px-6">
-          <div className="max-w-3xl mx-auto">
-            <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-4 text-center" style={{ color: '#C9A84C' }}>
-              Über mich
-            </p>
-            <h2 className="font-playfair text-3xl md:text-4xl mb-4 text-center" style={{ color: '#0A0A0F' }}>
-              Gemeinsam auf Erfolgskurs
-            </h2>
-            <div className="w-12 h-px mx-auto mb-8" style={{ background: '#C9A84C' }} />
-            <p className="font-inter font-light text-base leading-relaxed mb-6 text-center" style={{ color: 'rgba(10,10,15,0.6)' }}>
-              Wenn Sie im Bereich Social Media Ihr Unternehmen als Experte etablieren und die Chance nutzen möchten, täglich mit Ihren Kunden und Interessenten zu interagieren – dann unterstütze ich Sie gerne auf diesem spannenden Weg.
-            </p>
-            <ul className="space-y-3 max-w-xl mx-auto">
-              {[
-                'Modernes Social-Media-Marketing mit Strategie',
-                'IHK-Coach für Unternehmen & Mitarbeiter',
-                'Content-Creation: Foto, Video, Reels & Texte',
-                'Social-Recruiting: Talente gewinnen ohne Lebenslauf',
-                'Auftrittstraining & Präsentationscoaching',
-                'Video-Workshops: Professionell mit dem Smartphone',
-              ].map((punkt) => (
-                <li key={punkt} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 mt-0.5 font-bold text-sm" style={{ color: '#C9A84C' }}>✓</span>
-                  <span className="font-inter font-light text-sm leading-relaxed" style={{ color: 'rgba(10,10,15,0.7)' }}>
-                    {punkt}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Text */}
+              <div>
+                <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-4" style={{ color: '#C9A84C' }}>
+                  Über mich
+                </p>
+                <h2 className="font-playfair text-3xl md:text-4xl mb-4" style={{ color: '#0A0A0F' }}>
+                  Gemeinsam auf Erfolgskurs
+                </h2>
+                <div className="w-12 h-px mb-8" style={{ background: '#C9A84C' }} />
+                <p className="font-inter font-light text-base leading-relaxed mb-6" style={{ color: 'rgba(10,10,15,0.6)' }}>
+                  Wenn Sie im Bereich Social Media Ihr Unternehmen als Experte etablieren und die Chance nutzen möchten, täglich mit Ihren Kunden und Interessenten zu interagieren – dann unterstütze ich Sie gerne auf diesem spannenden Weg.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    'Modernes Social-Media-Marketing mit Strategie',
+                    'IHK-Coach für Unternehmen & Mitarbeiter',
+                    'Content-Creation: Foto, Video, Reels & Texte',
+                    'Social-Recruiting: Talente gewinnen ohne Lebenslauf',
+                    'Auftrittstraining & Präsentationscoaching',
+                    'Video-Workshops: Professionell mit dem Smartphone',
+                  ].map((punkt) => (
+                    <li key={punkt} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 mt-0.5 font-bold text-sm" style={{ color: '#C9A84C' }}>✓</span>
+                      <span className="font-inter font-light text-sm leading-relaxed" style={{ color: 'rgba(10,10,15,0.7)' }}>
+                        {punkt}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Bild 2 */}
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/social2.jpg"
+                  alt="Sarah Eid – Social Media Coaching"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bild 3 – vor CTA */}
+        <section className="px-6 pb-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative w-full h-64 md:h-80 overflow-hidden">
+              <Image
+                src="/kamera1.jpg"
+                alt="Sarah Eid – Kamera und Content-Creation"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+            </div>
           </div>
         </section>
 
