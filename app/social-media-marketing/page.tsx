@@ -124,21 +124,6 @@ export default function SocialMediaMarketingPage() {
           </div>
         </section>
 
-        {/* Bild 1 – nach Leistungen */}
-        <section className="px-6 py-12">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative w-full h-72 md:h-96 overflow-hidden">
-              <Image
-                src="/social1.jpg"
-                alt="Sarah Eid – Content-Creation für Social Media"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Über mich */}
         <section className="py-20 px-6">
           <div className="max-w-5xl mx-auto">
@@ -174,7 +159,7 @@ export default function SocialMediaMarketingPage() {
                 </ul>
               </div>
               {/* Bild 2 */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[4/5] max-h-96 overflow-hidden">
                 <Image
                   src="/social2.jpg"
                   alt="Sarah Eid – Social Media Coaching"
@@ -189,14 +174,14 @@ export default function SocialMediaMarketingPage() {
 
         {/* Bild 3 – vor CTA */}
         <section className="px-6 pb-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative w-full h-64 md:h-80 overflow-hidden">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative w-full h-56 md:h-72 overflow-hidden">
               <Image
                 src="/kamera1.jpg"
                 alt="Sarah Eid – Kamera und Content-Creation"
                 fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 80vw"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 60vw"
               />
             </div>
           </div>
