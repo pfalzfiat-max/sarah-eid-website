@@ -9,6 +9,7 @@ const navItems = [
   { label: 'Über mich', href: '#ueber-mich' },
   { label: 'Events', href: '#events' },
   { label: 'Traurednerin', href: '/freie-traurednerin', external: true },
+  { label: 'Marketing', href: '/social-media-marketing', external: true },
   { label: 'Politik', href: '#politik' },
   { label: 'Referenzen', href: '#referenzen' },
   { label: 'Showreel', href: '#showreel' },
