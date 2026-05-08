@@ -23,7 +23,7 @@ export default function UeberMich() {
             transition={{ duration: 0.85 }}
             className="relative grid grid-cols-2 gap-4"
           >
-            {/* Bild 1 – Politik */}
+            {/* Bild 1 – Sport */}
             <div className="relative aspect-[3/4]">
               <div
                 className="absolute -top-3 -right-3 w-full h-full hidden lg:block"
@@ -31,18 +31,18 @@ export default function UeberMich() {
                 aria-hidden="true"
               />
               <Image
-                src="/images/sarah+alexander.jpeg"
-                alt="Sarah Eid mit Ministerpräsident Alexander Schweitzer"
+                src="/fck2.jpg"
+                alt="Sarah Eid beim Sport-Event"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
-            {/* Bild 2 – Sport */}
+            {/* Bild 2 – Politik */}
             <div className="relative aspect-[3/4] mt-8">
               <Image
-                src="/fck2.jpg"
-                alt="Sarah Eid beim Sport-Event"
+                src="/images/sarah+alexander.jpeg"
+                alt="Sarah Eid mit Ministerpräsident Alexander Schweitzer"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 50vw, 25vw"
