@@ -24,12 +24,22 @@ const leistungen = [
   {
     title: 'Coachings & Workshops',
     description:
-      'Ich coache Unternehmen und Einzelpersonen im Umgang mit Social Media – in Workshops, Webinaren und Einzelcoachings, auch IHK-zertifiziert.',
+      'Ich coache Unternehmen und Einzelpersonen im Umgang mit Social Media – in Workshops, Webinaren und Einzelcoachings. Als IHK-Coach schule ich auch Ihre Mitarbeiter in allen relevanten Social-Media-Themen.',
   },
   {
     title: 'Social Recruiting',
     description:
       'Top-Talente für Ihr Unternehmen gewinnen: schnelle Bewerbung innerhalb von 2 Minuten, ohne Anschreiben und ohne Lebenslauf – über gezielte Recruiting-Kampagnen.',
+  },
+  {
+    title: 'Sicher auftreten & präsentieren',
+    description:
+      'In meinem Intensivtraining lernen Sie: klarer Einsatz von Körpersprache, Mimik und Gestik, Stimmtraining, authentisches Auftreten, Umgang mit Lampenfieber sowie strukturierte Präsentationen mit Storytelling – inkl. Praxisübungen und Feedbackrunden.',
+  },
+  {
+    title: 'Video-Workshop: Do it yourself',
+    description:
+      'Professionelle Videos für Social Media & Recruiting – ganz ohne Filmteam, nur mit Smartphone & Apps. Themen: Smartphone-Videoproduktion, Szenenführung, Videoschnitt, Musik & Texteinblendungen sowie das richtige Zubehör. Sie setzen Ihr eigenes Videoprojekt direkt im Workshop um.',
   },
 ];
 
@@ -85,7 +95,7 @@ export default function SocialMediaMarketingPage() {
               Was ich für Sie tue
             </h2>
             <div className="w-12 h-px mx-auto mb-14" style={{ background: '#C9A84C' }} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {leistungen.map((l) => (
                 <div
                   key={l.title}
@@ -120,9 +130,11 @@ export default function SocialMediaMarketingPage() {
             <ul className="space-y-3 max-w-xl mx-auto">
               {[
                 'Modernes Social-Media-Marketing mit Strategie',
-                'Coachings | Workshops | Webinare',
+                'IHK-Coach für Unternehmen & Mitarbeiter',
                 'Content-Creation: Foto, Video, Reels & Texte',
                 'Social-Recruiting: Talente gewinnen ohne Lebenslauf',
+                'Auftrittstraining & Präsentationscoaching',
+                'Video-Workshops: Professionell mit dem Smartphone',
               ].map((punkt) => (
                 <li key={punkt} className="flex items-start gap-3">
                   <span className="flex-shrink-0 mt-0.5 font-bold text-sm" style={{ color: '#C9A84C' }}>✓</span>
