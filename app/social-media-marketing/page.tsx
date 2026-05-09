@@ -68,9 +68,10 @@ export default function SocialMediaMarketingPage() {
             <Image
               src="/Logo_Sarah_Eid_Social_Media_bunt_schwarz_Rahmen.jpg"
               alt="Sarah Eid Social Media – Logo"
-              width={180}
-              height={180}
-              className="object-contain"
+              width={260}
+              height={260}
+              className="object-contain rounded-lg"
+              style={{ background: '#F5F0E8' }}
             />
           </div>
           <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-5" style={{ color: '#C9A84C' }}>
@@ -110,12 +111,12 @@ export default function SocialMediaMarketingPage() {
                 <div
                   key={l.title}
                   className="p-7"
-                  style={{ border: '1px solid rgba(201,168,76,0.3)', background: '#F5F0E8' }}
+                  style={{ border: '1px solid rgba(201,168,76,0.5)', background: '#FFFFFF' }}
                 >
                   <h3 className="font-playfair text-lg mb-3" style={{ color: '#C9A84C' }}>
                     {l.title}
                   </h3>
-                  <p className="font-inter font-light text-sm leading-relaxed" style={{ color: 'rgba(10,10,15,0.6)' }}>
+                  <p className="font-inter text-sm leading-relaxed" style={{ color: 'rgba(10,10,15,0.75)' }}>
                     {l.description}
                   </p>
                 </div>
