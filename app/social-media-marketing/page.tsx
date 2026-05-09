@@ -35,7 +35,7 @@ const leistungen = [
   {
     title: 'Videoproduktion & Imagefilme',
     description:
-      'Von der Idee bis zum fertigen Film: Ich produziere professionelle Imagefilme, Recruitingfilme und Social-Media-Videos mit professionellem Equipment. Dazu gehören auch spektakuläre Drohnenaufnahmen – für einen unvergesslichen ersten Eindruck.',
+      'Von der Idee bis zum fertigen Film: Ich produziere professionelle Imagefilme, Recruitingfilme und Social-Media-Videos mit professionellem Equipment – auf Wunsch auch mit Drohnenaufnahmen.',
   },
   {
     title: 'Video-Workshop: Do it yourself',
