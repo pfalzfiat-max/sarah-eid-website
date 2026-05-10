@@ -1,10 +1,53 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { events as content } from '@/lib/content';
+import { client } from '@/sanity/lib/client';
+import EventCard from './EventCard';
+import EventsCta from './EventsCta';
 
-export default function Events() {
+interface SanityEvent {
+  _id: string;
+  name: string;
+  beschreibung: string;
+  kategorie: string;
+  bildUrl: string | null;
+  reihenfolge: number;
+}
+
+async function getEvents(): Promise<SanityEvent[]> {
+  try {
+    return await client.fetch(
+      `*[_type == "event"] | order(reihenfolge asc) {
+        _id,
+        name,
+        beschreibung,
+        kategorie,
+        "bildUrl": bild.asset->url,
+        reihenfolge
+      }`,
+      {},
+      { next: { revalidate: 60 } }
+    );
+  } catch {
+    return [];
+  }
+}
+
+export default async function Events() {
+  const sanityEvents = await getEvents();
+
+  const karten = sanityEvents.length > 0
+    ? sanityEvents.map((e) => ({
+        name: e.name,
+        description: e.beschreibung,
+        kategorie: e.kategorie,
+        image: e.bildUrl,
+      }))
+    : content.karten.map((e) => ({
+        name: e.name,
+        description: e.description,
+        kategorie: e.kategorie,
+        image: e.image,
+      }));
+
   return (
     <section
       id="events"
@@ -15,33 +58,16 @@ export default function Events() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5"
-          >
+          <p className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5">
             {content.label}
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-playfair text-4xl md:text-5xl text-cream mb-4"
-          >
+          </p>
+          <h2 className="font-playfair text-4xl md:text-5xl text-cream mb-4">
             {content.heading}
-          </motion.h2>
+          </h2>
           <div className="gold-divider-center" />
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-inter font-light text-muted max-w-xl mx-auto"
-          >
+          <p className="font-inter font-light text-muted max-w-xl mx-auto">
             {content.beschreibung}
-          </motion.p>
+          </p>
         </div>
 
         {/* Grid */}
@@ -50,128 +76,20 @@ export default function Events() {
           role="list"
           aria-label="Event-Portfolio"
         >
-          {content.karten.map((event, i) => (
-            <motion.article
+          {karten.map((event, i) => (
+            <EventCard
               key={event.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.08 }}
-              role="listitem"
-              className="group relative flex flex-col overflow-hidden transition-all duration-300 cursor-default"
-              style={{
-                background: '#0A0A0F',
-                border: '1px solid rgba(201,168,76,0.18)',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,0.45)';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)';
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 16px 48px rgba(0,0,0,0.4)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,0.18)';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-              }}
-            >
-              {/* Gold top-accent line on hover */}
-              <div
-                className="absolute top-0 left-0 right-0 h-px z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-                style={{ background: 'linear-gradient(90deg, transparent, #C9A84C, transparent)' }}
-                aria-hidden="true"
-              />
-
-              {/* Image area */}
-              <div
-                className="relative w-full overflow-hidden"
-                style={{ aspectRatio: '1/1' }}
-              >
-                {event.image ? (
-                  <Image
-                    src={event.image}
-                    alt={event.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                ) : (
-                  /* Placeholder */
-                  <div
-                    className="w-full h-full flex flex-col items-center justify-center gap-3"
-                    style={{ background: '#13131A', border: 'none' }}
-                    aria-label="Bild folgt"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={1}
-                      className="w-8 h-8"
-                      style={{ color: 'rgba(201,168,76,0.3)' }}
-                      aria-hidden="true"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574v9.176A2.25 2.25 0 0 0 4.5 21h15a2.25 2.25 0 0 0 2.25-2.25V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
-                    </svg>
-                    <span className="font-inter text-[10px] uppercase tracking-[0.2em]" style={{ color: 'rgba(201,168,76,0.3)' }}>
-                      Foto folgt
-                    </span>
-                  </div>
-                )}
-                {/* Overlay gradient */}
-                {event.image && (
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(10,10,15,0.5) 0%, transparent 60%)' }}
-                    aria-hidden="true"
-                  />
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col p-6 flex-1">
-                {/* Badge */}
-                <span
-                  className="inline-flex self-start items-center px-2.5 py-1 rounded-full font-inter text-[10px] uppercase tracking-widest mb-4"
-                  style={{
-                    background: 'rgba(201,168,76,0.08)',
-                    border: '1px solid rgba(201,168,76,0.35)',
-                    color: '#C9A84C',
-                  }}
-                >
-                  {event.kategorie}
-                </span>
-
-                {/* Name */}
-                <h3 className="font-playfair text-lg text-cream mb-3 leading-snug">
-                  {event.name}
-                </h3>
-
-                {/* Description */}
-                <p className="font-inter font-light text-sm text-cream/50 leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-            </motion.article>
+              name={event.name}
+              description={event.description}
+              kategorie={event.kategorie}
+              image={event.image}
+              index={i}
+            />
           ))}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-14"
-        >
-          <button
-            onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-primary rounded-full"
-            aria-label="Buchungsanfrage für Ihr Event stellen"
-          >
-            {content.ctaButton}
-          </button>
-        </motion.div>
+        <EventsCta label={content.ctaButton} />
       </div>
     </section>
   );
