@@ -11,22 +11,59 @@ import VideoReel from '@/components/VideoReel';
 import FAQ from '@/components/FAQ';
 import Kontakt from '@/components/Kontakt';
 import Footer from '@/components/Footer';
+import {
+  getStartseite,
+  getLeistungen,
+  getFaq,
+  getReferenzen,
+} from '@/sanity/lib/queries';
 
-export default function Home() {
+export default async function Home() {
+  const [startseite, leistungen, faqItems, referenzen] = await Promise.all([
+    getStartseite(),
+    getLeistungen(),
+    getFaq(),
+    getReferenzen(),
+  ]);
+
+  const heroData = startseite ? {
+    tagline: startseite.heroTagline,
+    subtitle: startseite.heroSubtitel,
+    beschreibung: startseite.heroBeschreibung,
+    badgeRegion: startseite.heroBadgeRegion,
+    stats: startseite.heroStats,
+  } : undefined;
+
+  const ueberMichData = startseite ? {
+    headingLine1: startseite.ueberMichHeadingLine1,
+    headingLine2: startseite.ueberMichHeadingLine2,
+    bioParagraf1: startseite.ueberMichBio1,
+    bioParagraf2: startseite.ueberMichBio2,
+    zitat: startseite.ueberMichZitat,
+    staerken: startseite.ueberMichStaerken,
+  } : undefined;
+
+  const politikData = startseite ? {
+    heading: startseite.politikHeading,
+    paragraf1: startseite.politikParagraf1,
+    paragraf2: startseite.politikParagraf2,
+    hinweis: startseite.politikHinweis,
+  } : undefined;
+
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
+        <Hero data={heroData} />
         <SocialProofBar />
-        <Leistungen />
-        <UeberMich />
+        <Leistungen items={leistungen} />
+        <UeberMich data={ueberMichData} />
         <Events />
         <Traurednerin />
-        <PolitikSection />
-        <Referenzen />
+        <PolitikSection data={politikData} />
+        <Referenzen items={referenzen} />
         <VideoReel />
-        <FAQ />
+        <FAQ items={faqItems} />
         <Kontakt />
       </main>
       <Footer />

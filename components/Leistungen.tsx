@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { leistungen as content } from '@/lib/content';
 
+interface LeistungItem { titel?: string; title?: string; beschreibung?: string; description?: string }
+
 // Icons für die Leistungskarten (Reihenfolge entspricht content.karten)
 const icons = [
   <svg key="politik" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" /></svg>,
@@ -16,8 +18,6 @@ const icons = [
   <svg key="werbung" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5l16.5-4.125M12 6.75c-2.708 0-5.363.224-7.948.655C2.999 7.58 2.25 8.507 2.25 9.574v9.176A2.25 2.25 0 0 0 4.5 21h15a2.25 2.25 0 0 0 2.25-2.25V9.574c0-1.067-.75-1.994-1.802-2.169A48.329 48.329 0 0 0 12 6.75Z" /></svg>,
 ];
 
-const leistungen = content.karten.map((karte, i) => ({ ...karte, icon: icons[i] }));
-
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.07 } },
@@ -28,7 +28,11 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 };
 
-export default function Leistungen() {
+export default function Leistungen({ items }: { items?: LeistungItem[] }) {
+  const leistungen = (items && items.length > 0
+    ? items.map((item, i) => ({ title: item.titel || item.title || '', description: item.beschreibung || item.description || '', icon: icons[i] ?? icons[0] }))
+    : content.karten.map((karte, i) => ({ ...karte, icon: icons[i] }))
+  )
   return (
     <section
       id="leistungen"

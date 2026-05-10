@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const faqs = [
+const fallbackFaqs = [
   {
     frage: 'Was kostet eine professionelle Moderatorin?',
     antwort:
@@ -29,10 +29,16 @@ const faqs = [
     antwort:
       'Ja. Sarah Eid hat u.a. den Landesparteitag der Freien Wähler RLP, Gesprächsrunden mit Bundesverkehrsminister Patrick Schnieder sowie Veranstaltungen im Kontext der rheinland-pfälzischen Landtagswahl 2026 moderiert. Politische Anfragen werden nach sorgfältiger Prüfung angenommen.',
   },
-];
+]
 
-export default function FAQ() {
-  const [offen, setOffen] = useState<number | null>(null);
+interface FaqItem {
+  frage: string
+  antwort: string
+}
+
+export default function FAQ({ items }: { items?: FaqItem[] }) {
+  const [offen, setOffen] = useState<number | null>(null)
+  const faqs = items && items.length > 0 ? items : fallbackFaqs
 
   return (
     <section
@@ -42,7 +48,6 @@ export default function FAQ() {
       aria-label="Häufige Fragen – Sarah Eid Moderatorin"
     >
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <motion.p
             initial={{ opacity: 0 }}
@@ -64,7 +69,6 @@ export default function FAQ() {
           <div className="gold-divider-center" />
         </div>
 
-        {/* Fragen */}
         <dl className="space-y-3">
           {faqs.map((item, i) => (
             <motion.div
@@ -86,10 +90,7 @@ export default function FAQ() {
                   </span>
                   <span
                     className="shrink-0 transition-transform duration-300"
-                    style={{
-                      color: '#C9A84C',
-                      transform: offen === i ? 'rotate(45deg)' : 'rotate(0deg)',
-                    }}
+                    style={{ color: '#C9A84C', transform: offen === i ? 'rotate(45deg)' : 'rotate(0deg)' }}
                     aria-hidden="true"
                   >
                     <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
@@ -119,5 +120,5 @@ export default function FAQ() {
         </dl>
       </div>
     </section>
-  );
+  )
 }

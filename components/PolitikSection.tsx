@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { politik } from '@/lib/content';
+import { politik as fallback } from '@/lib/content';
 
-export default function PolitikSection() {
+interface PolitikData { heading?: string; paragraf1?: string; paragraf2?: string; hinweis?: string; label?: string; pills?: string[]; ctaButton?: string }
+
+export default function PolitikSection({ data }: { data?: PolitikData }) {
+  const politik = { ...fallback, ...data }
   return (
     <section
       id="politik"

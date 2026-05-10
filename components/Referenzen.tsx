@@ -2,7 +2,10 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { referenzen as content } from '@/lib/content';
+import { referenzen as fallback } from '@/lib/content';
+
+interface ReferenzItem { typ?: string; name: string; rolle?: string; zitat?: string; istInstagram?: boolean; vimeoId?: string }
+interface ReferenzProps { items?: ReferenzItem[] }
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -72,7 +75,15 @@ function VideoCard({ vimeoId, name, role, quote, index }: {
   );
 }
 
-export default function Referenzen() {
+export default function Referenzen({ items }: ReferenzProps) {
+  const textTestimonials = items
+    ? items.filter(r => r.typ !== 'video').map(r => ({ quote: r.zitat ?? '', name: r.name, role: r.rolle ?? '', isInstagram: r.istInstagram ?? false }))
+    : fallback.testimonials
+  const videoTestimonials = items
+    ? items.filter(r => r.typ === 'video').map(r => ({ vimeoId: r.vimeoId ?? '', name: r.name, role: r.rolle ?? '', quote: r.zitat ?? '' }))
+    : fallback.videoTestimonials
+  const content = fallback
+
   return (
     <section
       id="referenzen"
@@ -136,7 +147,7 @@ export default function Referenzen() {
           role="list"
           aria-label="Kundenbewertungen"
         >
-          {content.testimonials.map((t, i) => (
+          {textTestimonials.map((t, i) => (
             <motion.blockquote
               key={t.name}
               initial={{ opacity: 0, y: 24 }}
@@ -203,7 +214,7 @@ export default function Referenzen() {
 
         {/* Video Testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {content.videoTestimonials.map((v, i) => (
+          {videoTestimonials.map((v, i) => (
             <VideoCard key={v.vimeoId} index={i} {...v} />
           ))}
         </div>

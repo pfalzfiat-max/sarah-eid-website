@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { hero } from '@/lib/content';
+import { hero as fallback } from '@/lib/content';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -10,7 +10,10 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.85, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
 
-export default function Hero() {
+interface HeroData { tagline?: string; subtitle?: string; beschreibung?: string; badgeRegion?: string; stats?: { wert?: number; value?: number; suffix?: string; label?: string }[] }
+
+export default function Hero({ data }: { data?: HeroData }) {
+  const hero = { ...fallback, ...(data || {}), stats: (data?.stats && data.stats.length > 0 ? data.stats.map(s => ({ value: s.wert ?? s.value ?? 0, suffix: s.suffix ?? '', label: s.label ?? '' })) : fallback.stats) }
   const scrollToKontakt = () =>
     document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' });
   const scrollToLeistungen = () =>

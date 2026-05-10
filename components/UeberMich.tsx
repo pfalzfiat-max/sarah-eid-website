@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ueberMich } from '@/lib/content';
+import { ueberMich as fallback } from '@/lib/content';
 
-export default function UeberMich() {
+interface UeberMichData { headingLine1?: string; headingLine2?: string; bioParagraf1?: string; bioParagraf2?: string; zitat?: string; staerken?: string[] }
+
+export default function UeberMich({ data }: { data?: UeberMichData }) {
+  const ueberMich = { ...fallback, ...(data || {}), staerken: (data?.staerken && data.staerken.length > 0 ? data.staerken : fallback.staerken) }
   return (
     <section
       id="ueber-mich"
