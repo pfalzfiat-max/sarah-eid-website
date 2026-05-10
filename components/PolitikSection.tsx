@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-const pills = ['Diskret & vertraulich', 'Überparteilich professionell', 'Live-erfahren & belastbar'];
+import { politik } from '@/lib/content';
 
 export default function PolitikSection() {
   return (
@@ -37,7 +36,7 @@ export default function PolitikSection() {
           viewport={{ once: true }}
           className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-6"
         >
-          Politikmoderation
+          {politik.label}
         </motion.p>
 
         {/* H2 */}
@@ -48,8 +47,7 @@ export default function PolitikSection() {
           transition={{ duration: 0.7 }}
           className="font-playfair text-4xl md:text-5xl text-cream mb-8 leading-tight"
         >
-          Moderation auf höchstem
-          <br />politischen Niveau.
+          {politik.heading}
         </motion.h2>
 
         {/* Body – Cormorant */}
@@ -61,9 +59,7 @@ export default function PolitikSection() {
           className="font-cormorant font-light text-xl leading-relaxed mb-5"
           style={{ color: 'rgba(245,240,232,0.7)' }}
         >
-          Politische Veranstaltungen verlangen besondere Sorgfalt, Neutralität und absolute
-          Professionalität. Sarah Eid moderiert Parteiveranstaltungen, Podiumsdiskussionen
-          und politische Bürgerevents mit Fingerspitzengefühl.
+          {politik.paragraf1}
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
@@ -73,8 +69,7 @@ export default function PolitikSection() {
           className="font-cormorant font-light text-xl leading-relaxed mb-12"
           style={{ color: 'rgba(245,240,232,0.7)' }}
         >
-          Zu ihren Referenzen zählen Veranstaltungen im Umfeld der rheinland-pfälzischen
-          Landespolitik – darunter Veranstaltungen im Kontext der Landtagswahl 2026.
+          {politik.paragraf2}
         </motion.p>
 
         {/* Feature Pills */}
@@ -86,7 +81,7 @@ export default function PolitikSection() {
           className="flex flex-wrap justify-center gap-3 mb-10"
           aria-label="Kernkompetenzen Politikmoderation"
         >
-          {pills.map((label) => (
+          {politik.pills.map((label) => (
             <span
               key={label}
               className="font-inter text-xs px-4 py-2 rounded-full"
@@ -112,8 +107,7 @@ export default function PolitikSection() {
           aria-label="Hinweis zu politischen Moderationen"
         >
           <p className="font-inter text-xs italic leading-relaxed text-muted">
-            Politische Anfragen werden ausschließlich nach persönlichem Vorgespräch
-            und sorgfältiger Prüfung angenommen.
+            {politik.hinweis}
           </p>
         </motion.div>
 
@@ -129,7 +123,7 @@ export default function PolitikSection() {
             className="btn-outline-gold"
             aria-label="Anfrage für politische Veranstaltungen stellen"
           >
-            Anfrage stellen
+            {politik.ctaButton}
           </button>
         </motion.div>
       </div>
