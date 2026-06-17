@@ -3,19 +3,23 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
-function extractYouTubeId(url: string): string | null {
-  const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-  return match ? match[1] : null;
+function getEmbedUrl(url: string): string | null {
+  const youtubeMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  if (youtubeMatch) {
+    return `https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1&rel=0&modestbranding=1`;
+  }
+  const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
+  if (vimeoMatch) {
+    return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1&title=0&byline=0&portrait=0`;
+  }
+  return null;
 }
 
 export default function VideoReel() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || '';
-  const videoId = showreelUrl ? extractYouTubeId(showreelUrl) : null;
-  const embedUrl = videoId
-    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`
-    : null;
+  const embedUrl = showreelUrl ? getEmbedUrl(showreelUrl) : null;
 
   return (
     <section
@@ -127,7 +131,7 @@ export default function VideoReel() {
                   src={embedUrl}
                   title="Sarah Eid Showreel – Moderatorin & Sprecherin"
                   className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                 />
               ) : (
@@ -178,17 +182,16 @@ export default function VideoReel() {
           )}
         </motion.div>
 
-        {/* Note below video */}
+        {/* Caption below video */}
         {embedUrl && (
-          <p className="text-center font-inter text-xs text-white/30 mt-6 tracking-wide">
-            Showreel wird auf Anfrage zur Verfügung gestellt ·{' '}
-            <button
-              onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-gold/60 hover:text-gold transition-colors underline"
-            >
-              Jetzt anfragen
-            </button>
-          </p>
+          <div className="text-center mt-6">
+            <p className="font-inter text-sm text-cream/70">
+              Mike Lohrke, Bereichsleiter Arbeitsagentur Trier
+            </p>
+            <p className="font-inter text-xs text-white/40 mt-1 italic">
+              Mitarbeiter-Qualifizierungstag „Fit und Sicher im Umgang mit Kunden und sich selbst"
+            </p>
+          </div>
         )}
       </div>
     </section>

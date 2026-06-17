@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 const leistungen = [
   {
-    title: 'Social-Media-Strategie',
+    title: 'Videoproduktion & Imagefilme',
     description:
-      'Modernes Social-Media-Marketing mit klarer Strategie – damit Ihr Unternehmen als Experte wahrgenommen wird und täglich mit Kunden und Interessenten interagiert.',
+      'Von der Idee bis zum fertigen Film: Ich produziere professionelle Imagefilme, Recruitingfilme und Social-Media-Videos mit professionellem Equipment – auf Wunsch auch mit Drohnenaufnahmen.',
   },
   {
     title: 'Content-Creation',
@@ -23,24 +23,24 @@ const leistungen = [
       'Foto-, Video-, Reel- und Texterstellung für Ihre Social-Media-Kanäle – professionell, authentisch und auf Ihre Zielgruppe abgestimmt.',
   },
   {
-    title: 'Coachings & Workshops',
+    title: 'Sicher auftreten: Präsentieren mit Wirkung',
     description:
-      'Ich coache Unternehmen und Einzelpersonen im Umgang mit Social Media – in Workshops, Webinaren und Einzelcoachings. Als IHK-Coach schule ich auch Ihre Mitarbeiter in allen relevanten Social-Media-Themen.',
-  },
-  {
-    title: 'Social Recruiting',
-    description:
-      'Top-Talente für Ihr Unternehmen gewinnen: schnelle Bewerbung innerhalb von 2 Minuten, ohne Anschreiben und ohne Lebenslauf – über gezielte Recruiting-Kampagnen.',
-  },
-  {
-    title: 'Videoproduktion & Imagefilme',
-    description:
-      'Von der Idee bis zum fertigen Film: Ich produziere professionelle Imagefilme, Recruitingfilme und Social-Media-Videos mit professionellem Equipment – auf Wunsch auch mit Drohnenaufnahmen.',
+      'Stärken Sie Ihre persönliche Wirkung bei Präsentationen und Auftritten vor Publikum – mit klarer Sprache, überzeugender Körpersprache und spannender Aufbereitung Ihrer Inhalte. Themen: Rhetorik, Stimmtraining, Storytelling, Lampenfieber überwinden und Praxis-Feedback. Für Fach- und Führungskräfte, die in Meetings und vor Gruppen souverän auftreten möchten.',
   },
   {
     title: 'Video-Workshop: Do it yourself',
     description:
       'Professionelle Videos für Social Media & Recruiting – ganz ohne Filmteam, nur mit Smartphone & Apps. Themen: Smartphone-Videoproduktion, Szenenführung, Videoschnitt, Musik & Texteinblendungen sowie das richtige Zubehör. Sie setzen Ihr eigenes Videoprojekt direkt im Workshop um.',
+  },
+  {
+    title: 'Social-Media-Strategie',
+    description:
+      'Modernes Social-Media-Marketing mit klarer Strategie – damit Ihr Unternehmen als Experte wahrgenommen wird und täglich mit Kunden und Interessenten interagiert.',
+  },
+  {
+    title: 'Social Recruiting',
+    description:
+      'Top-Talente für Ihr Unternehmen gewinnen: schnelle Bewerbung innerhalb von 2 Minuten, ohne Anschreiben und ohne Lebenslauf – über gezielte Recruiting-Kampagnen.',
   },
 ];
 
@@ -77,8 +77,8 @@ export default function SocialMediaMarketingPage() {
           <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-5" style={{ color: '#C9A84C' }}>
             Seit 2016 · IHK-zertifiziert
           </p>
-          <h1 className="font-playfair text-5xl md:text-6xl leading-tight mb-4" style={{ color: '#0A0A0F' }}>
-            Social-Media-Marketing
+          <h1 className="font-playfair text-4xl md:text-5xl leading-tight mb-4" style={{ color: '#0A0A0F' }}>
+            Videoproduktion, Social&#8209;Media&#8209;Marketing & Workshops
           </h1>
           <div className="w-14 h-px mx-auto mb-6" style={{ background: '#C9A84C' }} />
           <p className="font-inter font-light text-lg leading-relaxed max-w-2xl mx-auto mb-4" style={{ color: 'rgba(10,10,15,0.6)' }}>

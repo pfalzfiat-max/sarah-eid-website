@@ -5,6 +5,18 @@ export const einstellungenType = defineType({
   title: 'Einstellungen',
   type: 'document',
   fields: [
+    // ─── IDENTITÄT ───────────────────────────────────────────
+    defineField({
+      name: 'name',
+      title: 'Name (z.B. Sarah Eid)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'berufsbezeichnung',
+      title: 'Berufsbezeichnung (z.B. Moderatorin & Sprecherin)',
+      type: 'string',
+    }),
+
     // ─── KONTAKT ─────────────────────────────────────────────
     defineField({
       name: 'telefon',
@@ -60,6 +72,64 @@ export const einstellungenType = defineType({
       title: 'Footer – Kurzbeschreibung',
       type: 'text',
       rows: 2,
+    }),
+
+    // ─── BILDER ──────────────────────────────────────────────
+    defineField({
+      name: 'heroBild',
+      title: 'Hero – Hintergrundbild',
+      type: 'image',
+      description: 'Atmosphärisches Hintergrundbild im Hero-Bereich (wird transparent eingeblendet)',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt-Text (für Barrierefreiheit & SEO)',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'portraitBild',
+      title: 'Hero – Portrait-Foto (rechte Spalte)',
+      type: 'image',
+      description: 'Das Portrait-Foto von Sarah Eid im Hero-Bereich',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt-Text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'ueberMichBild1',
+      title: 'Über mich – Bild links oben',
+      type: 'image',
+      description: 'Erstes Bild in der Über-mich-Sektion (z.B. Bühne/Sport)',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt-Text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'ueberMichBild2',
+      title: 'Über mich – Bild rechts unten',
+      type: 'image',
+      description: 'Zweites Bild in der Über-mich-Sektion (z.B. mit Persönlichkeit)',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt-Text',
+          type: 'string',
+        }),
+      ],
     }),
   ],
   preview: {

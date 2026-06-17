@@ -2,7 +2,13 @@
 
 import { motion } from 'framer-motion';
 
-export default function Kontakt() {
+interface KontaktProps {
+  email?: string;
+  telefon?: string;
+  telefonLink?: string;
+}
+
+export default function Kontakt({ email = 'mail@saraheid.de', telefon = '0176 32727160', telefonLink = 'tel:+4917632727160' }: KontaktProps) {
   return (
     <section
       id="kontakt"
@@ -11,7 +17,6 @@ export default function Kontakt() {
       aria-label="Anfrage an Sarah Eid"
     >
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        {/* Header */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -40,7 +45,6 @@ export default function Kontakt() {
           Ich freue mich auf Ihre Anfrage und melde mich innerhalb von 24–48 Stunden.
         </motion.p>
 
-        {/* Kontakt-Karten */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +54,7 @@ export default function Kontakt() {
         >
           {/* E-Mail */}
           <a
-            href="mailto:mail@saraheid.de"
+            href={`mailto:${email}`}
             className="group flex items-center gap-5 w-full sm:w-auto px-8 py-6 transition-all duration-300"
             style={{ background: '#13131A', border: '1px solid rgba(201,168,76,0.2)' }}
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.6)')}
@@ -67,15 +71,13 @@ export default function Kontakt() {
             </div>
             <div className="text-left">
               <p className="font-inter text-[10px] uppercase tracking-[0.2em] text-gold mb-1">E-Mail</p>
-              <p className="font-inter text-sm text-cream group-hover:text-gold transition-colors">
-                mail@saraheid.de
-              </p>
+              <p className="font-inter text-sm text-cream group-hover:text-gold transition-colors">{email}</p>
             </div>
           </a>
 
           {/* Telefon */}
           <a
-            href="tel:+4917632727160"
+            href={telefonLink}
             className="group flex items-center gap-5 w-full sm:w-auto px-8 py-6 transition-all duration-300"
             style={{ background: '#13131A', border: '1px solid rgba(201,168,76,0.2)' }}
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.6)')}
@@ -92,14 +94,11 @@ export default function Kontakt() {
             </div>
             <div className="text-left">
               <p className="font-inter text-[10px] uppercase tracking-[0.2em] text-gold mb-1">Telefon</p>
-              <p className="font-inter text-sm text-cream group-hover:text-gold transition-colors">
-                0176 32727160
-              </p>
+              <p className="font-inter text-sm text-cream group-hover:text-gold transition-colors">{telefon}</p>
             </div>
           </a>
         </motion.div>
 
-        {/* Hinweis */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

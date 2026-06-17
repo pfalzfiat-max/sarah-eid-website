@@ -4,10 +4,29 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ueberMich as fallback } from '@/lib/content';
 
-interface UeberMichData { headingLine1?: string; headingLine2?: string; bioParagraf1?: string; bioParagraf2?: string; zitat?: string; staerken?: string[] }
+interface UeberMichData {
+  headingLine1?: string;
+  headingLine2?: string;
+  bioParagraf1?: string;
+  bioParagraf2?: string;
+  zitat?: string;
+  staerken?: string[];
+  bild1Url?: string;
+  bild1Alt?: string;
+  bild2Url?: string;
+  bild2Alt?: string;
+}
 
 export default function UeberMich({ data }: { data?: UeberMichData }) {
-  const ueberMich = { ...fallback, ...(data || {}), staerken: (data?.staerken && data.staerken.length > 0 ? data.staerken : fallback.staerken) }
+  const ueberMich = {
+    ...fallback,
+    ...(data || {}),
+    staerken: (data?.staerken && data.staerken.length > 0 ? data.staerken : fallback.staerken),
+  };
+  const bild1Src = data?.bild1Url || '/fck2.jpg';
+  const bild1Alt = data?.bild1Alt || 'Sarah Eid beim Sport-Event';
+  const bild2Src = data?.bild2Url || '/images/sarah+alexander.jpeg';
+  const bild2Alt = data?.bild2Alt || 'Sarah Eid mit Ministerpräsident Alexander Schweitzer';
   return (
     <section
       id="ueber-mich"
@@ -26,7 +45,7 @@ export default function UeberMich({ data }: { data?: UeberMichData }) {
             transition={{ duration: 0.85 }}
             className="relative grid grid-cols-2 gap-4"
           >
-            {/* Bild 1 – Sport */}
+            {/* Bild 1 */}
             <div className="relative aspect-[3/4]">
               <div
                 className="absolute -top-3 -right-3 w-full h-full hidden lg:block"
@@ -34,18 +53,18 @@ export default function UeberMich({ data }: { data?: UeberMichData }) {
                 aria-hidden="true"
               />
               <Image
-                src="/fck2.jpg"
-                alt="Sarah Eid beim Sport-Event"
+                src={bild1Src}
+                alt={bild1Alt}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
-            {/* Bild 2 – Politik */}
+            {/* Bild 2 */}
             <div className="relative aspect-[3/4] mt-8">
               <Image
-                src="/images/sarah+alexander.jpeg"
-                alt="Sarah Eid mit Ministerpräsident Alexander Schweitzer"
+                src={bild2Src}
+                alt={bild2Alt}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 50vw, 25vw"

@@ -10,10 +10,30 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.85, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
 
-interface HeroData { tagline?: string; subtitle?: string; beschreibung?: string; badgeRegion?: string; stats?: { wert?: number; value?: number; suffix?: string; label?: string }[] }
+interface HeroData {
+  tagline?: string;
+  subtitle?: string;
+  beschreibung?: string;
+  badgeRegion?: string;
+  stats?: { wert?: number; value?: number; suffix?: string; label?: string }[];
+  heroBildUrl?: string;
+  heroBildAlt?: string;
+  portraitUrl?: string;
+  portraitAlt?: string;
+}
 
 export default function Hero({ data }: { data?: HeroData }) {
-  const hero = { ...fallback, ...(data || {}), stats: (data?.stats && data.stats.length > 0 ? data.stats.map(s => ({ value: s.wert ?? s.value ?? 0, suffix: s.suffix ?? '', label: s.label ?? '' })) : fallback.stats) }
+  const hero = {
+    ...fallback,
+    ...(data || {}),
+    stats: (data?.stats && data.stats.length > 0
+      ? data.stats.map(s => ({ value: s.wert ?? s.value ?? 0, suffix: s.suffix ?? '', label: s.label ?? '' }))
+      : fallback.stats),
+  };
+  const bgSrc = data?.heroBildUrl || '/images/sarah-f1.jpg';
+  const bgAlt = data?.heroBildAlt || 'Sarah Eid – Moderatorin aus Rheinland-Pfalz';
+  const portraitSrc = data?.portraitUrl || '/images/sarah-portrait.jpg';
+  const portraitAlt = data?.portraitAlt || 'Sarah Eid – Moderatorin auf der Bühne';
   const scrollToKontakt = () =>
     document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' });
   const scrollToLeistungen = () =>
@@ -29,8 +49,8 @@ export default function Hero({ data }: { data?: HeroData }) {
       {/* Subtle atmospheric background */}
       <div className="absolute inset-0 z-0 opacity-[0.07]">
         <Image
-          src="/images/sarah-f1.jpg"
-          alt="Sarah Eid – Moderatorin aus Rheinland-Pfalz"
+          src={bgSrc}
+          alt={bgAlt}
           fill
           priority={true}
           className="object-cover object-center"
@@ -171,8 +191,8 @@ export default function Hero({ data }: { data?: HeroData }) {
               {/* Portrait */}
               <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <Image
-                  src="/images/sarah-portrait.jpg"
-                  alt="Sarah Eid – Moderatorin auf der Bühne"
+                  src={portraitSrc}
+                  alt={portraitAlt}
                   fill
                   priority={true}
                   className="object-cover object-top"

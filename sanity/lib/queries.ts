@@ -14,7 +14,25 @@ export async function getStartseite() {
 // ─── EINSTELLUNGEN ────────────────────────────────────────────
 export async function getEinstellungen() {
   try {
-    return await client.fetch(`*[_type == "einstellungen" && _id == "einstellungen"][0]`, {}, opts)
+    return await client.fetch(
+      `*[_type == "einstellungen" && _id == "einstellungen"][0] {
+        name, berufsbezeichnung,
+        telefon, email, region,
+        instagram, facebook, linkedin,
+        seoTitel, seoBeschreibung,
+        footerBeschreibung,
+        "heroBildUrl": heroBild.asset->url,
+        "heroBildAlt": heroBild.alt,
+        "portraitBildUrl": portraitBild.asset->url,
+        "portraitBildAlt": portraitBild.alt,
+        "ueberMichBild1Url": ueberMichBild1.asset->url,
+        "ueberMichBild1Alt": ueberMichBild1.alt,
+        "ueberMichBild2Url": ueberMichBild2.asset->url,
+        "ueberMichBild2Alt": ueberMichBild2.alt
+      }`,
+      {},
+      opts
+    )
   } catch {
     return null
   }
