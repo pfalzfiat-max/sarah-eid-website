@@ -18,7 +18,7 @@ function getEmbedUrl(url: string): string | null {
 export default function VideoReel() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || '';
+  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || 'https://vimeo.com/1202075573';
   const embedUrl = showreelUrl ? getEmbedUrl(showreelUrl) : null;
 
   return (
