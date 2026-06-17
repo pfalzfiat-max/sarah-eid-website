@@ -234,6 +234,12 @@ export const referenzen = {
       role: 'Veranstaltungsteilnehmerin',
       quote: '',
     },
+    {
+      vimeoId: '1202075573',
+      name: 'Mike Lohrke',
+      role: 'Bereichsleiter Arbeitsagentur Trier',
+      quote: 'Mitarbeiter-Qualifizierungstag „Fit und Sicher im Umgang mit Kunden und sich selbst"',
+    },
   ],
   // Kundenstimmen – hier neue hinzufügen oder bestehende bearbeiten:
   // isInstagram: true = zeigt Instagram-Badge statt Sterne
