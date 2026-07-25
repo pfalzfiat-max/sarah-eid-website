@@ -203,9 +203,10 @@ async function seedReferenzen() {
     { _id: 'ref-text-markus', _type: 'referenz', typ: 'text', name: 'Markus L.', rolle: 'Geschäftsführer, Mittelständisches Unternehmen, Mannheim', zitat: 'Sarah Eid hat unsere Jubiläumsfeier auf ein völlig neues Level gehoben. Professionell, charmant und immer souverän – auch wenn der Abend eine unerwartete Wendung nahm.', istInstagram: false, reihenfolge: 4 },
     { _id: 'ref-text-claudia', _type: 'referenz', typ: 'text', name: 'Claudia F.', rolle: 'Eventmanagerin, Fachmesse Rhein-Neckar', zitat: 'Die Messe-Moderation durch Sarah war genau das, was wir gesucht haben: strukturiert, sympathisch und mit der richtigen Dosierung Humor. Unsere Aussteller und Besucher waren begeistert.', istInstagram: false, reihenfolge: 5 },
     { _id: 'ref-text-andreas', _type: 'referenz', typ: 'text', name: 'Dr. Andreas K.', rolle: 'Referent, Landespolitisches Forum RLP', zitat: 'Für unsere politische Podiumsdiskussion brauchten wir jemanden, der mit Fingerspitzengefühl moderiert und alle Beteiligten fair zu Wort kommen lässt. Sarah hat das meisterhaft gemeistert.', istInstagram: false, reihenfolge: 6 },
-    { _id: 'ref-text-instagram', _type: 'referenz', typ: 'text', name: 'Instagram-Feedback', rolle: 'SPD Rheinland-Pfalz Event', zitat: 'Liebe Sarah, du hast heute bei Alexander Schweitzer wirklich eine klasse Moderation gezeigt.', istInstagram: true, reihenfolge: 7 },
+    { _id: 'ref-text-carmen', _type: 'referenz', typ: 'text', name: 'Carmen Gieselmann', rolle: 'Google Rezension · Local Guide', zitat: 'Mit viel Herz, Einfühlungsvermögen und den richtigen Worten begleitet Sarah Menschen durch die bedeutendsten Momente ihres Lebens. Als freie Rednerin gestaltet sie persönliche und würdevolle Zeremonien – ob bei Hochzeiten, Trauerfeiern oder anderen besonderen Anlässen. Jede Rede ist so individuell wie die Menschen, für die sie spricht.', istInstagram: false, reihenfolge: 7 },
   ]
 
+  await client.delete('ref-text-instagram').catch(() => {})
   await upsertList('referenz', referenzen)
 }
 
