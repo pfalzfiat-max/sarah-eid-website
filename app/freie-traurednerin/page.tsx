@@ -164,6 +164,17 @@ export default function FreieTraurednerinPage() {
           </div>
         </section>
 
+        {/* Bild */}
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+          <Image
+            src="/trauung.jpg"
+            alt="Freie Trauung mit Sarah Eid"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </section>
+
         {/* Zitat */}
         <section className="py-20 px-6 text-center">
           <div className="max-w-2xl mx-auto">
