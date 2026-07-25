@@ -203,9 +203,11 @@ export default function Referenzen({ items }: ReferenzProps) {
                   <p className="font-inter font-medium text-xs text-gold uppercase tracking-wider">
                     {t.name}
                   </p>
-                  <p className="font-inter text-xs text-muted mt-0.5">
-                    {t.role}
-                  </p>
+                  {t.role ? (
+                    <p className="font-inter text-xs text-muted mt-0.5">
+                      {t.role}
+                    </p>
+                  ) : null}
                 </cite>
               </footer>
             </motion.blockquote>
