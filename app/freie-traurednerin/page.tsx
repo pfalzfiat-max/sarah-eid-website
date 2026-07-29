@@ -176,8 +176,17 @@ export default function FreieTraurednerinPage() {
         </section>
 
         {/* Zitat */}
-        <section className="py-20 px-6 text-center">
-          <div className="max-w-2xl mx-auto">
+        <section className="max-w-5xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative aspect-[2/3] max-w-sm mx-auto w-full order-2 lg:order-1">
+            <Image
+              src="/traurednerin2.jpg"
+              alt="Sarah Eid – Freie Traurednerin"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 90vw, 40vw"
+            />
+          </div>
+          <div className="order-1 lg:order-2 text-center lg:text-left">
             <blockquote>
               <p className="font-cormorant font-light text-2xl md:text-3xl italic leading-relaxed" style={{ color: 'rgba(245,240,232,0.85)' }}>
                 &ldquo;Ihre Geschichte verdient eine Zeremonie, die so besonders ist wie Sie selbst.&rdquo;
