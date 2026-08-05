@@ -78,8 +78,9 @@ export default async function DatenschutzPage() {
                 <p>Diese Website verwendet keine Tracking-Cookies oder Analyse-Dienste von Drittanbietern.</p>
               </section>
               <section>
-                <h2 className="font-playfair text-lg mb-3" style={{ color: '#F5F0E8' }}>4. Hosting (Vercel)</h2>
-                <p>Diese Website wird bei Vercel Inc., San Francisco, CA, USA gehostet. Vercel ist unter dem EU-U.S. Data Privacy Framework zertifiziert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+                <h2 className="font-playfair text-lg mb-3" style={{ color: '#F5F0E8' }}>4. Hosting</h2>
+                <p className="mb-4">Diese Website wird über die Infrastruktur von Vercel Inc., San Francisco, CA, USA, bereitgestellt. Vercel verarbeitet dabei ausschließlich technische Zugriffsdaten, die zum sicheren und zuverlässigen Betrieb der Website erforderlich sind (siehe Server-Log-Dateien, Punkt 3) – eine Auswertung zu Werbe- oder Analysezwecken findet nicht statt.</p>
+                <p>Da diese Verarbeitung in den USA stattfindet, handelt es sich um eine Datenübermittlung in ein Drittland. Vercel ist unter dem EU-U.S. Data Privacy Framework (DPF) zertifiziert, wodurch gemäß dem Angemessenheitsbeschluss der EU-Kommission vom 10. Juli 2023 ein der DSGVO entsprechendes Datenschutzniveau sichergestellt ist. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer stabilen und sicheren Bereitstellung der Website).</p>
               </section>
               <section>
                 <h2 className="font-playfair text-lg mb-3" style={{ color: '#F5F0E8' }}>5. Ihre Rechte (Art. 15–22 DSGVO)</h2>
