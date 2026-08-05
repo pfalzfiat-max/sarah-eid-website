@@ -18,7 +18,7 @@ function getEmbedUrl(url: string): string | null {
 export default function VideoReel() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || 'https://vimeo.com/1202075573';
+  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || 'https://youtu.be/KnUriOPwXi0';
   const embedUrl = showreelUrl ? getEmbedUrl(showreelUrl) : null;
 
   return (
@@ -181,18 +181,6 @@ export default function VideoReel() {
             </AnimatePresence>
           )}
         </motion.div>
-
-        {/* Caption below video */}
-        {embedUrl && (
-          <div className="text-center mt-6">
-            <p className="font-inter text-sm text-cream/70">
-              Mike Lohrke, Bereichsleiter Arbeitsagentur Trier
-            </p>
-            <p className="font-inter text-xs text-white/40 mt-1 italic">
-              Mitarbeiter-Qualifizierungstag „Fit und Sicher im Umgang mit Kunden und sich selbst"
-            </p>
-          </div>
-        )}
       </div>
     </section>
   );
