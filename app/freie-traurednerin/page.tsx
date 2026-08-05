@@ -175,6 +175,30 @@ export default function FreieTraurednerinPage() {
           />
         </section>
 
+        {/* Testimonial */}
+        <section className="py-20 px-6" style={{ background: '#13131A' }}>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-4" style={{ color: '#C9A84C' }}>
+              Erfahrungsbericht
+            </p>
+            <div className="w-12 h-px mx-auto mb-10" style={{ background: '#C9A84C' }} />
+            <blockquote>
+              <p className="font-cormorant italic text-xl md:text-2xl leading-relaxed" style={{ color: 'rgba(245,240,232,0.85)' }}>
+                &ldquo;Sarah hat sich zur Vorbereitung sehr viel Zeit für uns genommen, um herauszufinden, was wir möchten, und hat mit sehr vielen eigenen Ideen und Impulsen die Trauung zu dem gemacht, was wir uns wünschen. In mehreren einfühlsamen Interviews hat sie all unsere Gefühle eingefangen und in einer wahnsinnig persönlichen Rede an unsere Gäste vermittelt – humorvoll, kurzweilig und emotional zugleich. Nicht nur wir, auch alle Gäste waren zu Tränen gerührt. Wir können Sarah und ihre Arbeit jedem Brautpaar absolut weiterempfehlen!&rdquo;
+              </p>
+              <footer className="mt-8">
+                <div className="w-8 h-px mx-auto mb-4 bg-gold" style={{ background: '#C9A84C' }} aria-hidden="true" />
+                <p className="font-inter font-medium text-xs uppercase tracking-wider" style={{ color: '#C9A84C' }}>
+                  Selina &amp; Adrian
+                </p>
+                <p className="font-inter text-xs mt-0.5" style={{ color: 'rgba(245,240,232,0.4)' }}>
+                  Freie Trauung
+                </p>
+              </footer>
+            </blockquote>
+          </div>
+        </section>
+
         {/* Zitat */}
         <section className="max-w-5xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[2/3] max-w-sm mx-auto w-full order-2 lg:order-1">
