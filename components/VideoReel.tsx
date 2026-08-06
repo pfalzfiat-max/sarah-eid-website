@@ -18,7 +18,7 @@ function getEmbedUrl(url: string): string | null {
 export default function VideoReel() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || 'https://youtu.be/KnUriOPwXi0';
+  const showreelUrl = process.env.NEXT_PUBLIC_SHOWREEL_URL || 'https://youtu.be/7YdYxUYOMzc';
   const embedUrl = showreelUrl ? getEmbedUrl(showreelUrl) : null;
 
   return (
