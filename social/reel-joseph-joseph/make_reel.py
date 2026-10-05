@@ -2,10 +2,12 @@
 """Instagram-Reel (1080x1920, 30 fps) aus den Joseph & Joseph Anhaenger-Fotos.
 
 Aufruf:  python3 make_reel.py            -> reel.mp4 (mit Beat) + reel-ohne-musik.mp4
+         python3 make_reel.py --clean    -> reel-clean.mp4 (nur Kamerafahrten, ohne Text/Musik/Effekte)
 Benoetigt: Pillow, numpy, ffmpeg
 """
 import math
 import subprocess
+import sys
 import wave
 from pathlib import Path
 
@@ -16,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
 BPM = 120
 BEAT = 60 / BPM
+CLEAN = "--clean" in sys.argv
 
 RED = (206, 17, 38)
 BLUE = (30, 58, 160)
@@ -152,7 +155,7 @@ SHOTS = [
         Line(text_sprite("MAN MIETEN!", font_anton(160), box=BLUE, pad=(36, 6)), 1520, delay=0.12),
     ]),
 ]
-END_DUR = 3.5
+END_DUR = 0.0 if CLEAN else 3.5
 
 # Endkarte: verschwommener, abgedunkelter Hintergrund + Branding
 _bg = render_shot(PHOTOS["wide"], 0.33, 0.5, 1.0, 1.0).filter(ImageFilter.GaussianBlur(22))
@@ -193,7 +196,7 @@ END_LINES = [
 yy, xx = np.mgrid[0:H, 0:W]
 _r = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
 _yn = yy / H
-_grad = 1 - 0.45 * np.clip(1 - _yn / 0.30, 0, 1) ** 1.6 - 0.40 * np.clip((_yn - 0.68) / 0.32, 0, 1) ** 1.6
+_grad = 1.0 if CLEAN else 1 - 0.45 * np.clip(1 - _yn / 0.30, 0, 1) ** 1.6 - 0.40 * np.clip((_yn - 0.68) / 0.32, 0, 1) ** 1.6
 VIGNETTE = ((1 - 0.28 * np.clip(_r - 0.55, 0, 1) ** 1.5) * _grad)[..., None].astype(np.float32)
 
 
@@ -221,23 +224,24 @@ def frames():
             start, (dur, key, a, b, lines) = [bs for bs in bounds if bs[0] <= t][-1]
             tl = t - start
             k = ease_io(tl / dur)
-            punch = 1 + 0.10 * (1 - ease_out(tl / 0.30))
+            punch = 1.0 if CLEAN else 1 + 0.10 * (1 - ease_out(tl / 0.30))
             cx, cy, h = (lerp(a[j], b[j], k) for j in range(3))
             base = render_shot(PHOTOS[key], cx, cy, h, punch)
             frame = Image.fromarray(grade(np.asarray(base))).convert("RGBA")
-            draw_lines(frame, lines, tl)
+            if not CLEAN:
+                draw_lines(frame, lines, tl)
         else:
             tl = t - end_start
             frame = END_BG.copy()
             draw_lines(frame, END_LINES, tl, start=0.05)
         # weisser Blitz an jedem Schnitt
         cut_t = tl
-        flash = max(0.0, 0.65 * (1 - cut_t / 0.17)) if i > 0 else 0.0
+        flash = max(0.0, 0.65 * (1 - cut_t / 0.17)) if i > 0 and not CLEAN else 0.0
         out = frame.convert("RGB")
         if flash > 0:
             out = Image.blend(out, Image.new("RGB", (W, H), WHITE), flash)
         # Schluss-Fade
-        if t > total - 0.4:
+        if t > total - 0.4 and not CLEAN:
             out = Image.blend(out, Image.new("RGB", (W, H), (0, 0, 0)), (t - (total - 0.4)) / 0.4)
         yield out.tobytes()
 
@@ -314,7 +318,7 @@ def make_music(path, total):
 
 def main():
     total = sum(s[0] for s in SHOTS) + END_DUR
-    silent = HERE / "reel-ohne-musik.mp4"
+    silent = HERE / ("reel-clean.mp4" if CLEAN else "reel-ohne-musik.mp4")
     proc = subprocess.Popen([
         "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
         "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
@@ -325,6 +329,9 @@ def main():
         proc.stdin.write(fb)
     proc.stdin.close()
     proc.wait()
+    if CLEAN:
+        print("fertig:", silent)
+        return
 
     wav = HERE / "beat.wav"
     make_music(wav, total)
