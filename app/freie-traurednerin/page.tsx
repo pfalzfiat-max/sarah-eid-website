@@ -168,8 +168,8 @@ export default function FreieTraurednerinPage() {
         {/* Bild */}
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden">
           <Image
-            src="/trauung.jpg"
-            alt="Freie Trauung mit Sarah Eid"
+            src="/freietraurednerin.png"
+            alt="Sarah Eid hält eine Trauzeremonie in einer Kirche"
             fill
             className="object-cover"
             sizes="100vw"
