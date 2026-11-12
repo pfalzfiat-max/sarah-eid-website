@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Traurednerin() {
   return (
@@ -22,7 +23,7 @@ export default function Traurednerin() {
             transition={{ duration: 0.85 }}
           >
             <p className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold mb-5">
-              Freie Traurednerin
+              Freie Traurednerin · Pfalz & bundesweit
             </p>
             <h2 className="font-playfair text-4xl md:text-5xl text-cream mb-2 leading-tight">
               Ihr schönster Moment –
@@ -31,7 +32,7 @@ export default function Traurednerin() {
             <div className="gold-divider" />
 
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-5">
-              Eine Hochzeit ist der bedeutendste Tag im Leben zweier Menschen. Als freie Traurednerin gestalte ich Ihre Zeremonie individuell, persönlich und von Herzen – unabhängig von Konfession oder Ort. Ob im Freien, im Weingut, im Schloss oder im kleinen Kreis: Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
+              Eine Hochzeit ist der bedeutendste Tag im Leben zweier Menschen. Als freie Traurednerin gestalte ich Ihre Zeremonie individuell, persönlich und von Herzen – unabhängig von Konfession oder Ort. Ob im Weingut an der Südlichen Weinstraße, auf einem Pfälzer Schloss, im Freien oder im kleinen Kreis: Jede Trauung ist so einzigartig wie das Paar, das sie feiert.
             </p>
             <p className="font-inter font-light text-cream/60 leading-relaxed mb-8">
               In einem persönlichen Vorgespräch lerne ich Sie und Ihre Geschichte kennen – und schreibe daraus eine Rede, die wirklich zu Ihnen passt. Mit natürlicher Wärme, echtem Einfühlungsvermögen und dem Gespür für den richtigen Moment begleite ich Sie durch eine Zeremonie, die alle Anwesenden berührt.
@@ -42,7 +43,7 @@ export default function Traurednerin() {
                 'Individuelle Zeremonie – auf Ihr Paar zugeschnitten',
                 'Persönliches Kennenlerngespräch & professionelle Vorbereitung',
                 'Standesamtlich oder freie Trauung – flexibel & konfessionslos',
-                'Bundesweit verfügbar – auch für Destinationsweddings',
+                'Zuhause in der Südpfalz – bundesweit verfügbar, auch für Destinationsweddings',
                 'Einfühlsam, warmherzig und mit echter Bühnenpräsenz',
               ].map((punkt) => (
                 <li key={punkt} className="flex items-start gap-3">
@@ -66,13 +67,21 @@ export default function Traurednerin() {
               </footer>
             </blockquote>
 
-            <button
-              onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary rounded-full"
-              aria-label="Anfrage als Traurednerin stellen"
-            >
-              Trauung anfragen
-            </button>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <button
+                onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary rounded-full"
+                aria-label="Anfrage als Traurednerin stellen"
+              >
+                Trauung anfragen
+              </button>
+              <Link
+                href="/freie-traurednerin"
+                className="font-inter text-xs uppercase tracking-widest text-gold hover:text-cream transition-colors"
+              >
+                Mehr zur freien Trauung in der Pfalz →
+              </Link>
+            </div>
           </motion.div>
 
           {/* Image Column */}

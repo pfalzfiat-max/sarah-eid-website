@@ -1,16 +1,31 @@
+const areaServed = [
+  { '@type': 'AdministrativeArea', name: 'Pfalz' },
+  { '@type': 'AdministrativeArea', name: 'Südpfalz' },
+  { '@type': 'AdministrativeArea', name: 'Südliche Weinstraße' },
+  { '@type': 'City', name: 'Landau in der Pfalz' },
+  { '@type': 'City', name: 'Neustadt an der Weinstraße' },
+  { '@type': 'City', name: 'Speyer' },
+  { '@type': 'City', name: 'Karlsruhe' },
+  { '@type': 'AdministrativeArea', name: 'Rheinland-Pfalz' },
+  { '@type': 'Country', name: 'Deutschland' },
+];
+
 export const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Sarah Eid',
-  jobTitle: 'Moderatorin und Sprecherin',
+  jobTitle: ['Moderatorin', 'Freie Traurednerin', 'Sprecherin'],
+  homeLocation: { '@type': 'Place', name: 'Südpfalz, Südliche Weinstraße' },
   description:
-    'Sarah Eid ist eine professionelle Moderatorin und Sprecherin aus Rheinland-Pfalz. Sie moderiert Firmenevents, politische Veranstaltungen, Messen, Galas und Parteitage. Als ehemalige Weinprinzessin der Südlichen Weinstraße 2023/24 und IHK-zertifizierte Social-Media-Expertin ist sie bundesweit buchbar.',
+    'Sarah Eid ist eine professionelle Moderatorin, freie Traurednerin und Sprecherin aus der Südpfalz (Rheinland-Pfalz). Sie moderiert Firmenevents, politische Veranstaltungen, Messen, Galas und Parteitage. Als ehemalige Weinprinzessin der Südlichen Weinstraße 2023/24 und IHK-zertifizierte Social-Media-Expertin ist sie bundesweit buchbar.',
   url: 'https://www.saraheid.de',
   telephone: '+49-176-32727160',
   email: 'mail@saraheid.de',
-  image: 'https://www.saraheid.de/images/sarah-eid.jpg',
+  image: 'https://www.saraheid.de/images/sarah-portrait.jpg',
   address: {
     '@type': 'PostalAddress',
+    postalCode: '76889',
+    addressLocality: 'Oberotterbach',
     addressRegion: 'Rheinland-Pfalz',
     addressCountry: 'DE',
   },
@@ -54,6 +69,8 @@ export const personSchema = {
   ],
   knowsAbout: [
     'Moderation',
+    'Moderation in der Pfalz',
+    'Freie Trauung',
     'Event-Moderation',
     'Firmenevent',
     'Sprecher',
@@ -73,20 +90,29 @@ export const personSchema = {
 
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Sarah Eid – Moderatorin & Sprecherin',
+  '@type': 'ProfessionalService',
+  '@id': 'https://www.saraheid.de/#business',
+  name: 'Sarah Eid – Moderatorin & Freie Traurednerin',
   description:
-    'Professionelle Moderatorin für Firmenevents, Messen, Galas, politische Veranstaltungen und Modenschauen. Sprecherin für Imagefilme und Werbespots. Bundesweit buchbar.',
+    'Moderatorin und freie Traurednerin aus der Südpfalz für Firmenevents, Messen, Galas, Weinfeste, politische Veranstaltungen und Hochzeiten in der Pfalz und bundesweit. Sprecherin für Imagefilme und Werbespots.',
   url: 'https://www.saraheid.de',
+  image: 'https://www.saraheid.de/images/sarah-portrait.jpg',
   telephone: '+49-176-32727160',
   email: 'mail@saraheid.de',
-  areaServed: 'DE',
+  areaServed: areaServed,
   address: {
     '@type': 'PostalAddress',
+    postalCode: '76889',
+    addressLocality: 'Oberotterbach',
     addressRegion: 'Rheinland-Pfalz',
     addressCountry: 'DE',
   },
   priceRange: 'Auf Anfrage',
+  sameAs: [
+    'https://www.instagram.com/_sarah_eid/',
+    'https://www.facebook.com/coach.socialmedia/',
+    'https://www.linkedin.com/in/sarah-eid-3763b21a4/',
+  ],
 };
 
 export const webSiteSchema = {
@@ -111,7 +137,7 @@ export const serviceSchema = [
     description:
       'Professionelle Event-Moderation für Firmenevents, Messen, Kongresse, Galas und Sportevents. Bundesweit buchbar.',
     provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
-    areaServed: 'DE',
+    areaServed: areaServed,
     serviceType: 'Eventmoderation',
   },
   {
@@ -121,7 +147,7 @@ export const serviceSchema = [
     description:
       'Moderation von Podiumsdiskussionen, Parteitagen und politischen Bürgerevents in Rheinland-Pfalz und bundesweit.',
     provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
-    areaServed: 'DE',
+    areaServed: areaServed,
     serviceType: 'Politikmoderation',
   },
   {
@@ -131,7 +157,7 @@ export const serviceSchema = [
     description:
       'Individuelle freie Trauzeremonie – konfessionslos, persönlich und von Herzen. Für den schönsten Tag im Leben. Bundesweit buchbar.',
     provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
-    areaServed: 'DE',
+    areaServed: areaServed,
     serviceType: 'Freie Trauung',
   },
   {
@@ -141,7 +167,7 @@ export const serviceSchema = [
     description:
       'Professionelle Sprecherin für Imagefilme, Erklärvideos, Radio-Spots und TV-Werbung.',
     provider: { '@type': 'Person', name: 'Sarah Eid', url: 'https://www.saraheid.de' },
-    areaServed: 'DE',
+    areaServed: areaServed,
     serviceType: 'Voice-Over & Sprecherin',
   },
 ];

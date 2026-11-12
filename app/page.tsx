@@ -19,15 +19,22 @@ import {
   getFaq,
   getReferenzen,
 } from '@/sanity/lib/queries';
+import { faqSchema, serviceSchema } from '@/lib/schema';
 
 export async function generateMetadata(): Promise<Metadata> {
   const e = await getEinstellungen();
+  const title = e?.seoTitel || 'Moderatorin & freie Traurednerin – Pfalz & bundesweit | Sarah Eid';
+  const description =
+    e?.seoBeschreibung ||
+    'Sarah Eid – Moderatorin & freie Traurednerin aus der Pfalz. Firmenevents, Messen, Galas, Politik & Hochzeiten – in der Pfalz und bundesweit buchbar. Jetzt anfragen.';
   return {
-    title: e?.seoTitel || 'Sarah Eid – Moderatorin & Sprecherin | Rheinland-Pfalz & Bundesweit',
-    description: e?.seoBeschreibung || 'Sarah Eid moderiert Live-Events, Messen, politische Veranstaltungen, TV & Radio – bundesweit. Freie Traurednerin & Sprecherin aus Rheinland-Pfalz.',
+    title,
+    description,
+    alternates: { canonical: '/' },
     openGraph: {
-      title: e?.seoTitel || 'Sarah Eid – Moderatorin & Sprecherin',
-      description: e?.seoBeschreibung || 'Moderatorin & Sprecherin aus Rheinland-Pfalz',
+      title,
+      description,
+      url: 'https://www.saraheid.de',
       locale: 'de_DE',
       type: 'website',
     },
@@ -81,6 +88,10 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, ...serviceSchema]) }}
+      />
       <Navbar />
       <main>
         <Hero data={heroData} />

@@ -197,7 +197,19 @@ export default function Footer({
           <p className="font-inter text-xs text-cream/20">
             © {currentYear} Sarah Eid · Alle Rechte vorbehalten.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
+            <Link
+              href="/moderatorin-pfalz"
+              className="font-inter text-xs text-cream/20 hover:text-gold/60 transition-colors duration-200"
+            >
+              Moderatorin Pfalz
+            </Link>
+            <Link
+              href="/freie-traurednerin"
+              className="font-inter text-xs text-cream/20 hover:text-gold/60 transition-colors duration-200"
+            >
+              Traurednerin Pfalz
+            </Link>
             <Link
               href="/impressum"
               className="font-inter text-xs text-cream/20 hover:text-gold/60 transition-colors duration-200"

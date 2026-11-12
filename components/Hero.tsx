@@ -31,9 +31,9 @@ export default function Hero({ data }: { data?: HeroData }) {
       : fallback.stats),
   };
   const bgSrc = data?.heroBildUrl || '/images/sarah-f1.jpg';
-  const bgAlt = data?.heroBildAlt || 'Sarah Eid – Moderatorin aus Rheinland-Pfalz';
+  const bgAlt = data?.heroBildAlt || 'Sarah Eid – Moderatorin aus der Pfalz';
   const portraitSrc = data?.portraitUrl || '/images/sarah-portrait.jpg';
-  const portraitAlt = data?.portraitAlt || 'Sarah Eid – Moderatorin auf der Bühne';
+  const portraitAlt = data?.portraitAlt || 'Sarah Eid – Moderatorin aus der Südpfalz auf der Bühne';
   const scrollToKontakt = () =>
     document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' });
   const scrollToLeistungen = () =>
@@ -91,6 +91,9 @@ export default function Hero({ data }: { data?: HeroData }) {
               Moderatorin
               <span className="block text-gold" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
                 {hero.name}
+              </span>
+              <span className="block font-inter font-normal text-xs tracking-[0.35em] uppercase text-cream/50 mt-4">
+                aus der Pfalz · bundesweit buchbar
               </span>
             </motion.h1>
 

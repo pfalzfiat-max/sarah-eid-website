@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
-import { personSchema, localBusinessSchema, faqSchema, webSiteSchema, serviceSchema } from '@/lib/schema';
+import { personSchema, localBusinessSchema, webSiteSchema } from '@/lib/schema';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -25,23 +25,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Moderatorin & Freie Traurednerin buchen – Sarah Eid, bundesweit',
+  metadataBase: new URL('https://www.saraheid.de'),
+  title: 'Moderatorin & freie Traurednerin – Pfalz & bundesweit | Sarah Eid',
   description:
-    'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen, Messen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
+    'Sarah Eid – Moderatorin & freie Traurednerin aus der Pfalz. Firmenevents, Messen, Galas, Politik & Hochzeiten – in der Pfalz und bundesweit buchbar.',
   keywords: [
+    'Moderatorin Pfalz',
+    'Moderator Pfalz',
+    'Moderatorin Südpfalz',
+    'Moderatorin Südliche Weinstraße',
+    'Moderatorin Landau',
     'Moderatorin buchen',
     'Event Moderatorin Deutschland',
     'Messe Moderatorin',
     'Sprecherin Imagefilm',
     'Firmenevents moderieren',
     'Moderatorin Rheinland-Pfalz',
-    'Moderatorin Südpfalz',
     'Politikmoderation',
     'Podiumsdiskussion Moderatorin',
     'Wahlkampfveranstaltung Moderatorin',
     'Parteitagsmoderation',
     'Freie Traurednerin',
     'Freie Traurednerin Rheinland-Pfalz',
+    'Traurednerin Pfalz',
+    'Trauredner Pfalz',
+    'Trauredner Südpfalz',
     'Freie Trauung buchen',
     'Hochzeitsrednerin',
     'Sarah Eid',
@@ -64,9 +72,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     url: 'https://www.saraheid.de',
-    title: 'Moderatorin & Freie Traurednerin buchen – Sarah Eid, bundesweit',
+    title: 'Moderatorin & freie Traurednerin – Pfalz & bundesweit | Sarah Eid',
     description:
-      'Sarah Eid – Moderatorin & freie Traurednerin aus Rheinland-Pfalz. Firmenevents, politische Veranstaltungen & individuelle Hochzeitszeremonien. Bundesweit buchbar.',
+      'Sarah Eid – Moderatorin & freie Traurednerin aus der Pfalz. Firmenevents, Messen, Galas, Politik & Hochzeiten – bundesweit buchbar.',
     siteName: 'Sarah Eid – Moderatorin & Freie Traurednerin',
     images: [
       {
@@ -79,13 +87,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sarah Eid | Moderatorin & Sprecherin',
+    title: 'Moderatorin & freie Traurednerin – Pfalz & bundesweit | Sarah Eid',
     description:
-      'Professionelle Moderatorin für Firmenevents, Messen, Galas & politische Veranstaltungen. Bundesweit buchbar.',
+      'Moderatorin aus der Pfalz für Firmenevents, Messen, Galas & politische Veranstaltungen. Bundesweit buchbar.',
     images: ['https://www.saraheid.de/og-image.jpg'],
-  },
-  alternates: {
-    canonical: 'https://www.saraheid.de',
   },
   verification: {
     google: 'TNA2XUmUtywlFhWO7vlqPM5jBDMdTsmBf5VYJWYkOzA',
@@ -125,25 +130,9 @@ gtag('config', 'G-E7VVRZQY27');`,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
             __html: JSON.stringify(webSiteSchema),
           }}
         />
-        {serviceSchema.map((s, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(s),
-            }}
-          />
-        ))}
-        <link rel="canonical" href="https://www.saraheid.de" />
       </head>
       <body>{children}</body>
     </html>

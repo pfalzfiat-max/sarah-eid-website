@@ -4,10 +4,17 @@ import { Metadata } from 'next';
 import TraurednerinTestimonial from '@/components/TraurednerinTestimonial';
 
 export const metadata: Metadata = {
-  title: 'Freie Traurednerin Rheinland-Pfalz buchen – Sarah Eid',
+  title: 'Freie Traurednerin Pfalz & Südpfalz – Sarah Eid',
   description:
-    'Sarah Eid – freie Traurednerin aus Rheinland-Pfalz. Individuelle, konfessionslose Trauzeremonien bundesweit. Persönlich, warmherzig und unvergesslich. Jetzt anfragen.',
+    'Freie Traurednerin aus der Südpfalz: Sarah Eid gestaltet persönliche, konfessionslose Trauungen im Weingut, Schloss oder Garten – in der Pfalz und bundesweit.',
   keywords: [
+    'Freie Traurednerin Pfalz',
+    'Traurednerin Südpfalz',
+    'Trauredner Pfalz',
+    'Trauredner Südpfalz',
+    'Freie Trauung Südliche Weinstraße',
+    'Freie Trauung Weingut Pfalz',
+    'Traurednerin Landau',
     'Freie Traurednerin Rheinland-Pfalz',
     'Freie Traurednerin buchen',
     'Hochzeitsrednerin RLP',
@@ -22,9 +29,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.saraheid.de/freie-traurednerin',
   },
   openGraph: {
-    title: 'Freie Traurednerin Rheinland-Pfalz buchen – Sarah Eid',
+    title: 'Freie Traurednerin Pfalz & Südpfalz – Sarah Eid',
     description:
-      'Individuelle, konfessionslose Trauzeremonie – persönlich, warmherzig und unvergesslich. Bundesweit buchbar.',
+      'Persönliche, konfessionslose Trauzeremonie im Weingut, Schloss oder Garten – in der Pfalz und bundesweit.',
     url: 'https://www.saraheid.de/freie-traurednerin',
     images: [{ url: 'https://www.saraheid.de/Traurednerin.png', alt: 'Sarah Eid – Freie Traurednerin' }],
   },
@@ -49,11 +56,16 @@ const leistungen = [
   {
     title: 'Bundesweit buchbar',
     description:
-      'Ob Weingut in der Pfalz, Schloss in Rheinland-Pfalz oder Destinationswedding – ich reise zu Ihnen.',
+      'Ob Weingut an der Südlichen Weinstraße, Schloss in der Pfalz oder Destinationswedding – ich reise zu Ihnen.',
   },
 ];
 
 const faqs = [
+  {
+    frage: 'Sie suchen einen Trauredner oder eine Traurednerin in der Pfalz?',
+    antwort:
+      'Ich lebe in der Südpfalz an der Südlichen Weinstraße und gestalte freie Trauungen in der ganzen Pfalz – etwa in Landau, Neustadt an der Weinstraße, Bad Dürkheim, Speyer oder im Pfälzerwald. Auch in Karlsruhe, Mannheim und bundesweit bin ich für Sie da.',
+  },
   {
     frage: 'Was kostet eine freie Trauung mit Sarah Eid?',
     antwort:
@@ -76,9 +88,23 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.frage,
+    acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+  })),
+};
+
 export default function FreieTraurednerinPage() {
   return (
     <div className="min-h-screen font-inter" style={{ background: '#0A0A0F', color: '#F5F0E8' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* Header */}
       <header className="pt-8 pb-6 px-6 border-b" style={{ borderColor: '#252530' }}>
@@ -98,10 +124,10 @@ export default function FreieTraurednerinPage() {
         <section className="max-w-5xl mx-auto px-6 pt-20 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-5" style={{ color: '#C9A84C' }}>
-              Freie Traurednerin · Rheinland-Pfalz & bundesweit
+              Freie Traurednerin · Pfalz, Südpfalz & bundesweit
             </p>
             <h1 className="font-playfair text-4xl md:text-5xl leading-tight mb-4" style={{ color: '#F5F0E8' }}>
-              Freie Traurednerin in Rheinland-Pfalz –<br />
+              Freie Traurednerin in der Pfalz –<br />
               <span style={{ color: '#C9A84C' }}>Sarah Eid</span>
             </h1>
             <div className="w-12 h-px mb-6" style={{ background: '#C9A84C' }} />
@@ -127,7 +153,7 @@ export default function FreieTraurednerinPage() {
             />
             <Image
               src="/Traurednerin.png"
-              alt="Sarah Eid – Freie Traurednerin Rheinland-Pfalz"
+              alt="Sarah Eid – Freie Traurednerin aus der Pfalz"
               fill
               className="object-cover object-top"
               sizes="(max-width: 768px) 90vw, 40vw"
@@ -174,6 +200,23 @@ export default function FreieTraurednerinPage() {
             className="object-cover"
             sizes="100vw"
           />
+        </section>
+
+        {/* Region */}
+        <section className="max-w-3xl mx-auto px-6 py-20 text-center">
+          <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-4" style={{ color: '#C9A84C' }}>
+            Pfalz & Südpfalz
+          </p>
+          <h2 className="font-playfair text-3xl md:text-4xl mb-3" style={{ color: '#F5F0E8' }}>
+            Freie Trauung in der Pfalz
+          </h2>
+          <div className="w-12 h-px mx-auto mb-8" style={{ background: '#C9A84C' }} />
+          <p className="font-inter font-light text-base leading-relaxed mb-4" style={{ color: 'rgba(245,240,232,0.6)' }}>
+            Die Pfalz ist zum Heiraten gemacht: Weingüter zwischen den Reben, Burgen und Schlösser, Gärten mit Blick auf den Pfälzerwald. Als ehemalige Weinprinzessin der Südlichen Weinstraße bin ich hier zuhause und kenne die Region und ihre Menschen.
+          </p>
+          <p className="font-inter font-light text-base leading-relaxed" style={{ color: 'rgba(245,240,232,0.6)' }}>
+            Ob in Landau, Neustadt an der Weinstraße, Bad Dürkheim, Deidesheim oder Speyer: Als Traurednerin aus der Südpfalz komme ich ohne lange Anreise zu Ihnen und gestalte eine Zeremonie, die zu Ihnen und zu Ihrem Ort passt.
+          </p>
         </section>
 
         {/* Testimonial */}
