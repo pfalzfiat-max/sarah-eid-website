@@ -61,7 +61,8 @@ export const personSchema = {
       description: '4 Tage Bühnenmoderation beim Frankenthaler Pfalzfest',
       location: { '@type': 'Place', addressLocality: 'Frankenthal', addressCountry: 'DE' },
     },
-  ],
+    // Google verlangt startDate für Events – Einträge ohne Datum werden nicht ausgegeben
+  ].filter((e) => 'startDate' in e),
   sameAs: [
     'https://www.instagram.com/_sarah_eid/',
     'https://www.facebook.com/coach.socialmedia/',
